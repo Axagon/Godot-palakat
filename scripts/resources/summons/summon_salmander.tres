@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://bxvxjoqw0hjpb"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_0o68c"]
+
+[resource]
+script = ExtResource("1_0o68c")
+summon_name = "Salamandra"
+max_health = 25
+move_speed = 70.0
+attack_damage = 4
+metadata/_custom_type_script = "uid://ch6bw48writhf"

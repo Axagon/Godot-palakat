@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://bubobqin24x7j"]
+
+[ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_moehj"]
+
+[resource]
+script = ExtResource("1_moehj")
+catalyst_name = "Palla di Fuoco"
+base_damage = 14
+base_mana_cost = 16
+base_cooldown = 1.8
+metadata/_custom_type_script = "uid://dhqxiy4kqwgod"

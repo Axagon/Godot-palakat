@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bawh0ce76cyc4"]
+
+[ext_resource type="Script" uid="uid://c4tolo2jqfmkn" path="res://scripts/combat/projectile.gd" id="1_lh4qw"]
+[ext_resource type="Texture2D" uid="uid://c2uukj6dtj68q" path="res://icon.svg" id="2_jb0is"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fi6k"]
+radius = 8.0
+
+[node name="Projectiles" type="Area2D" unique_id=1935998141]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_lh4qw")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=8541384]
+position = Vector2(-7.7, -8)
+scale = Vector2(0.12, 0.12)
+color = Color(0, 0, 1, 1)
+texture = ExtResource("2_jb0is")
+polygon = PackedVector2Array(22.653355, 56.355026, 23.132137, 92.50323, 29.595722, 101.12134, 45.395596, 107.82432, 64.54695, 109.260666, 83.45892, 107.58492, 98.54062, 100.642555, 105.48299, 92.50323, 104.76482, 55.63685, 110.98901, 47.018738, 103.089066, 35.76731, 94.23157, 40.31576, 86.81041, 34.57035, 86.571014, 23.55832, 72.925674, 19.488653, 68.85602, 28.106766, 60.47729, 28.585552, 55.210667, 19.488653, 42.04411, 23.318926, 42.522892, 34.809742, 34.862347, 40.07637, 25.286663, 36.246098, 16.907944, 46.779346)
+uv = PackedVector2Array(22.653355, 56.355026, 23.132137, 92.50323, 29.595722, 101.12134, 45.395596, 107.82432, 64.54695, 109.260666, 83.45892, 107.58492, 98.54062, 100.642555, 105.48299, 92.50323, 104.76482, 55.63685, 110.98901, 47.018738, 103.089066, 35.76731, 94.23157, 40.31576, 86.81041, 34.57035, 86.571014, 23.55832, 72.925674, 19.488653, 68.85602, 28.106766, 60.47729, 28.585552, 55.210667, 19.488653, 42.04411, 23.318926, 42.522892, 34.809742, 34.862347, 40.07637, 25.286663, 36.246098, 16.907944, 46.779346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1745486216]
+shape = SubResource("CircleShape2D_6fi6k")

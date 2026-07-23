@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://mu7lib4dycpr"]
+
+[ext_resource type="Script" uid="uid://buav2b551t6ry" path="res://scripts/enemy/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Script" uid="uid://ds43mbo8lmm5v" path="res://scripts/player/health_component.gd" id="1_6xk8f"]
+[ext_resource type="Texture2D" uid="uid://qi1sbdqu7ays" path="res://sprites/frog.png" id="2_4ra3w"]
+[ext_resource type="Resource" uid="uid://d1l7w4nrg3st" path="res://scripts/resources/enemies/enemy_melee.tres" id="2_c4w8v"]
+[ext_resource type="Script" uid="uid://b5my13f3c64e6" path="res://scripts/combat/health_bar.gd" id="4_5uy6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5c6a"]
+size = Vector2(50, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvnpn"]
+radius = 40.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=704352768]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_4ra3w")
+enemy_resource = ExtResource("2_c4w8v")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1204980296]
+position = Vector2(-27, -20)
+color = Color(1, 0, 0, 1)
+texture = ExtResource("2_4ra3w")
+polygon = PackedVector2Array(54.5, -7, -1.5, -6, 0.5, 39, 52.5, 41, 11.165207, 24.46)
+internal_vertex_count = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495933774]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_m5c6a")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=565937075]
+script = ExtResource("1_6xk8f")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1051888401]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1474342794]
+shape = SubResource("CircleShape2D_uvnpn")
+
+[node name="HealthBar" type="Node2D" parent="." unique_id=1037319944]
+position = Vector2(-20, -45)
+script = ExtResource("4_5uy6h")
+
+[node name="Background" type="ColorRect" parent="HealthBar" unique_id=529706082]
+offset_right = 40.0
+offset_bottom = 6.0
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar" unique_id=1766450914]
+offset_right = 40.0
+offset_bottom = 6.0
+color = Color(1.2931612, 0.2836376, 0.2836376, 1)

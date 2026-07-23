@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://dgpf5lsenwd18"]
+
+[ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_qf1r0"]
+
+[resource]
+script = ExtResource("1_qf1r0")
+catalyst_name = "Rigenerazione"
+element = 1
+spell_type = 1
+base_heal_amount = 10
+base_mana_cost = 15
+base_cooldown = 2.5
+metadata/_custom_type_script = "uid://dhqxiy4kqwgod"

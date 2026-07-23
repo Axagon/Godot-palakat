@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://bq1tnoegnidmt"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_70aja"]
+
+[resource]
+script = ExtResource("1_70aja")
+summon_name = "Lupo"
+element = 1
+food_cost = 18
+max_health = 22
+move_speed = 90.0
+attack_damage = 4
+attack_cooldown = 0.9
+metadata/_custom_type_script = "uid://ch6bw48writhf"

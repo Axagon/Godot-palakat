@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bax74gf3h2y8w"]
+
+[ext_resource type="Script" uid="uid://duhicu606v5y2" path="res://scripts/levels/outpost.gd" id="1_rlhpb"]
+[ext_resource type="Script" uid="uid://ds43mbo8lmm5v" path="res://scripts/player/health_component.gd" id="2_5y5nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o88rc"]
+
+[node name="Outpost" type="StaticBody2D" unique_id=178990198]
+collision_layer = 20
+collision_mask = 0
+script = ExtResource("1_rlhpb")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1810599142]
+color = Color(0.023529412, 0, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766181762]
+shape = SubResource("RectangleShape2D_o88rc")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=630741278]
+script = ExtResource("2_5y5nq")
+metadata/_custom_type_script = "uid://ds43mbo8lmm5v"

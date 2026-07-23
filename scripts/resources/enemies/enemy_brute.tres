@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/enemy_resource.gd" uid="uid://bsxpxs45grctb" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_name = "Bruto Osseo"
+category = 0
+max_health = 45
+move_speed = 50.0
+attack_damage = 5
+attack_range = 45.0
+attack_cooldown = 1.6
+metadata/_custom_type_script = "uid://bsxpxs45grctb"

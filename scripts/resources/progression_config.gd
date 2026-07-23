@@ -1,0 +1,13 @@
+# progression_config.gd — dati puri di bilanciamento progressione, editabili in Inspector
+extends Resource
+class_name ProgressionConfig
+
+@export var starting_catalysts: Array[CatalystResource] = []
+@export var catalyst_unlock_queue: Array[CatalystResource] = []
+@export var catalyst_unlock_first_level: int = 10
+@export var catalyst_unlock_interval: int = 10
+
+@export var starting_summons: Array[SummonResource] = []
+@export var summon_unlock_queue: Array[SummonResource] = []
+@export var summon_unlock_first_level: int = 5
+@export var summon_unlock_interval: int = 10

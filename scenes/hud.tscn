@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://2lg5kmpmde78"]
+
+[ext_resource type="Script" uid="uid://chpbxibiw81j1" path="res://scripts/ui/vitual_joystick.gd" id="1_5ysmq"]
+[ext_resource type="Script" uid="uid://3sbb7eqhcn4n" path="res://scripts/ui/hud.gd" id="1_6fi6k"]
+[ext_resource type="Script" uid="uid://bx58iljjdltck" path="res://scripts/ui/summon_hand_ui.gd" id="1_ahhtf"]
+[ext_resource type="PackedScene" uid="uid://vqq3qll64oid" path="res://scripts/ui/SummonCardUI.tscn" id="2_oo0fn"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1779683299]
+layer = 2
+script = ExtResource("1_6fi6k")
+
+[node name="Control" type="Control" parent="." unique_id=256513699]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VirtualJoystick" type="Control" parent="Control" unique_id=341947377]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -250.0
+offset_right = 250.0
+grow_vertical = 0
+script = ExtResource("1_5ysmq")
+
+[node name="Base" type="Control" parent="Control/VirtualJoystick" unique_id=1200991262]
+custom_minimum_size = Vector2(140, 140)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Knob" type="Control" parent="Control/VirtualJoystick/Base" unique_id=1099576000]
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="SummonHandUI" type="Control" parent="Control" unique_id=909824985]
+custom_minimum_size = Vector2(100, 140)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -75)
+mouse_filter = 2
+script = ExtResource("1_ahhtf")
+card_scene = ExtResource("2_oo0fn")
+metadata/_custom_type_script = "uid://bx58iljjdltck"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/SummonHandUI" unique_id=913122895]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+mouse_filter = 2
+
+[node name="SpellButtons" type="VBoxContainer" parent="Control" unique_id=10266556]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -330.0
+offset_right = -50.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(50, 50)
+offset_transform_enabled = true
+theme_override_constants/separation = 15
+
+[node name="UltimateButton" type="Button" parent="Control/SpellButtons" unique_id=1853534259]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Ult"
+
+[node name="SecondaryButton" type="Button" parent="Control/SpellButtons" unique_id=994831460]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Sec"
+
+[node name="BaseButton" type="Button" parent="Control/SpellButtons" unique_id=1436807363]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+text = "Base"
+
+[node name="PlayerHealthBar" type="Control" parent="Control" unique_id=711217554]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="Background" type="ColorRect" parent="Control/PlayerHealthBar" unique_id=1083177132]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="Control/PlayerHealthBar" unique_id=967933804]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.9, 0.2, 0.2, 1)
+
+[node name="PlayerShieldBar" type="Control" parent="Control" unique_id=1311821866]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 60.0
+offset_bottom = 90.0
+
+[node name="Background" type="ColorRect" parent="Control/PlayerShieldBar" unique_id=1838671298]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="Control/PlayerShieldBar" unique_id=426823669]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0, 0, 1, 1)
+
+[node name="PlayerManaBar" type="Control" parent="Control" unique_id=1083668281]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 60.0
+offset_bottom = 120.0
+
+[node name="Background" type="ColorRect" parent="Control/PlayerManaBar" unique_id=1963767220]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="Control/PlayerManaBar" unique_id=1656645261]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.48452926, 0.6651851, 0.95468724, 1)
+
+[node name="PlayerFoodBar" type="Control" parent="Control" unique_id=871656565]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 110.0
+offset_right = 60.0
+offset_bottom = 150.0
+
+[node name="Background" type="ColorRect" parent="Control/PlayerFoodBar" unique_id=1699257353]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="Control/PlayerFoodBar" unique_id=670688814]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+color = Color(0.95468724, 0.85430586, 0.3491902, 1)

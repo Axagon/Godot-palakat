@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://bt5dk0evqrd7j"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_goxgt"]
+[ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="1_ipbk7"]
+
+[resource]
+script = ExtResource("1_goxgt")
+summon_name = "Fenice Minore"
+category = 2
+attack_projectile_scene = ExtResource("1_ipbk7")
+food_cost = 25
+max_health = 18
+move_speed = 55.0
+attack_damage = 5
+attack_range = 180.0
+attack_cooldown = 1.5
+metadata/_custom_type_script = "uid://ch6bw48writhf"

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ProgressionConfig" format=3 uid="uid://b0ngikp24tp3l"]
+
+[ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_jnyu1"]
+[ext_resource type="Resource" uid="uid://6b423ty26oyd" path="res://scripts/resources/catalysts/catalyst_fire_wall.tres" id="2_j7cl0"]
+[ext_resource type="Script" uid="uid://4tf7o6vuf3nk" path="res://scripts/resources/progression_config.gd" id="2_rnjug"]
+[ext_resource type="Resource" uid="uid://ddr6pscj7go8r" path="res://scripts/resources/catalysts/catalyst_thorn_burst.tres" id="3_5jg83"]
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="3_byl62"]
+[ext_resource type="Resource" uid="uid://dgpf5lsenwd18" path="res://scripts/resources/catalysts/catalyst_regrowth.tres" id="4_id8ib"]
+[ext_resource type="Resource" uid="uid://yndqnme6j0uw" path="res://scripts/resources/catalysts/catalyst_bark_skin.tres" id="5_afjdy"]
+[ext_resource type="Resource" uid="uid://bpccr8brapcen" path="res://scripts/resources/catalysts/catalyst_fire.tres" id="7_t088i"]
+[ext_resource type="Resource" uid="uid://dyg4lwff1ganv" path="res://scripts/resources/catalysts/catalyst_thorn_whip.tres" id="8_j1bgk"]
+[ext_resource type="Resource" uid="uid://bubobqin24x7j" path="res://scripts/resources/catalysts/catalyst_fireball.tres" id="9_p0yhe"]
+[ext_resource type="Resource" uid="uid://bxvxjoqw0hjpb" path="res://scripts/resources/summons/summon_salmander.tres" id="11_i4qdw"]
+[ext_resource type="Resource" uid="uid://bt5dk0evqrd7j" path="res://scripts/resources/summons/summon_lesser_phoenix.tres" id="12_dmqnm"]
+[ext_resource type="Resource" uid="uid://bq1tnoegnidmt" path="res://scripts/resources/summons/summon_wolf.tres" id="13_jgg7y"]
+[ext_resource type="Resource" uid="uid://cvt6ily25aujq" path="res://scripts/resources/summons/summon_magma_golem.tres" id="14_gtrio"]
+[ext_resource type="Resource" uid="uid://sqm2ipw1ox1e" path="res://scripts/resources/summons/summon_imp.tres" id="15_7ja8l"]
+[ext_resource type="Resource" uid="uid://o8i7dl0crqy1" path="res://scripts/resources/summons/summon_dryad.tres" id="16_vqt3f"]
+[ext_resource type="Resource" uid="uid://b7rs55c78mgdo" path="res://scripts/resources/summons/summon_thorn_spirit.tres" id="17_1pmwj"]
+[ext_resource type="Resource" uid="uid://hyfao0sait1i" path="res://scripts/resources/summons/summon_living_totem.tres" id="18_iok6x"]
+
+[resource]
+script = ExtResource("2_rnjug")
+starting_catalysts = Array[ExtResource("1_jnyu1")]([ExtResource("7_t088i"), ExtResource("8_j1bgk"), ExtResource("9_p0yhe")])
+catalyst_unlock_queue = Array[ExtResource("1_jnyu1")]([ExtResource("2_j7cl0"), ExtResource("3_5jg83"), ExtResource("4_id8ib"), ExtResource("5_afjdy")])
+starting_summons = Array[ExtResource("3_byl62")]([ExtResource("11_i4qdw"), ExtResource("12_dmqnm")])
+summon_unlock_queue = Array[ExtResource("3_byl62")]([ExtResource("13_jgg7y"), ExtResource("14_gtrio"), ExtResource("15_7ja8l"), ExtResource("16_vqt3f"), ExtResource("17_1pmwj"), ExtResource("18_iok6x")])
+metadata/_custom_type_script = "uid://4tf7o6vuf3nk"

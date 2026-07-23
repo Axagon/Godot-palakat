@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c67moly7s3k0f"]
+
+[ext_resource type="Script" uid="uid://dyctt1yr4j1fi" path="res://scripts/levels/game_state.gd" id="1_jy5aj"]
+[ext_resource type="Resource" uid="uid://b0ngikp24tp3l" path="res://scripts/resources/progression_config_default.tres" id="2_a1qx6"]
+
+[node name="GameState" type="Node" unique_id=451600808]
+script = ExtResource("1_jy5aj")
+progression_config = ExtResource("2_a1qx6")

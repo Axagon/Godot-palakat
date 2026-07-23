@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://bpccr8brapcen"]
+
+[ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_vkly8"]
+
+[resource]
+script = ExtResource("1_vkly8")
+catalyst_name = "Dardo di Fuoco"
+base_damage = 8
+base_mana_cost = 8
+base_cooldown = 1.0
+metadata/_custom_type_script = "uid://dhqxiy4kqwgod"

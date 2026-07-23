@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://o8i7dl0crqy1"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_03ypa"]
+
+[resource]
+script = ExtResource("1_03ypa")
+summon_name = "Driade"
+category = 5
+element = 1
+food_cost = 25
+max_health = 16
+move_speed = 50.0
+attack_cooldown = 1.5
+metadata/_custom_type_script = "uid://ch6bw48writhf"

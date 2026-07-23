@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cx443ywkkevqf"]
+
+[ext_resource type="Script" uid="uid://co414rj0n8o3v" path="res://scripts/ui/main_menu/main_menu.gd" id="1_s4xhi"]
+[ext_resource type="Script" uid="uid://cygrejrg4iqqf" path="res://scripts/resources/levels/level_resource.gd" id="2_my85g"]
+[ext_resource type="Resource" uid="uid://6eof0wsk0p6t" path="res://scripts/resources/levels/level_01.tres" id="3_kad7n"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_02.tres" id="4_yoys1"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_03.tres" id="5_gk1yv"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_04.tres" id="6_1fovh"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_05.tres" id="7_vyj17"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_06.tres" id="8_t14sa"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_07.tres" id="9_kkqwa"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_08.tres" id="10_y0ae4"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_09.tres" id="11_se6hr"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_10.tres" id="12_qjfr2"]
+
+[node name="MainMenu" type="Control" unique_id=1027720489]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_s4xhi")
+levels = Array[ExtResource("2_my85g")]([ExtResource("3_kad7n"), ExtResource("4_yoys1"), ExtResource("5_gk1yv"), ExtResource("6_1fovh"), ExtResource("7_vyj17"), ExtResource("8_t14sa"), ExtResource("9_kkqwa"), ExtResource("10_y0ae4"), ExtResource("11_se6hr"), ExtResource("12_qjfr2")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1540155723]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1708417057]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=121849136]
+layout_mode = 2
+text = "PalaKat: Sir Whiskers's Chronicles"
+
+[node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=460382566]
+layout_mode = 2
+columns = 5

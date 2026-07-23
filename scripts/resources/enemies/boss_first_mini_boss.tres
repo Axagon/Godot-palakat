@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BossResource" format=3 uid="uid://mvjx2jpni2i1"]
+
+[ext_resource type="Script" uid="uid://ba7cmg10cfe6r" path="res://scripts/resources/enemies/boss_resource.gd" id="1_qyohs"]
+[ext_resource type="Resource" uid="uid://d1l7w4nrg3st" path="res://scripts/resources/enemies/enemy_melee.tres" id="1_v550c"]
+[ext_resource type="PackedScene" uid="uid://mu7lib4dycpr" path="res://scenes/enemy.tscn" id="2_ksxfr"]
+
+[resource]
+script = ExtResource("1_qyohs")
+aoe_damage = 5
+aoe_radius = 150.0
+aoe_interval = 4.0
+reinforcement_scene = ExtResource("2_ksxfr")
+reinforcement_enemy_resource = ExtResource("1_v550c")
+reinforcement_interval = 6.0
+enemy_name = "Test Boss"
+max_health = 200
+attack_range = 120.0
+metadata/_custom_type_script = "uid://ba7cmg10cfe6r"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WaveResource" format=3]
+
+[ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="1_script"]
+[ext_resource type="Resource" uid="uid://do30nr8hv35xf" path="res://scripts/resources/enemies/enemy_archer.tres" id="2_archer"]
+[ext_resource type="Resource" path="res://scripts/resources/enemies/enemy_brute.tres" id="3_brute"]
+[ext_resource type="Resource" uid="uid://dhwvhhgleuy46" path="res://scripts/resources/enemies/enemy_shade.tres" id="4_shade"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_pool = Array[Resource]([ExtResource("2_archer"), ExtResource("3_brute"), ExtResource("4_shade")])
+enemy_count = 5
+spawn_interval = 1.0
+start_time = 28.0
+metadata/_custom_type_script = "uid://b1cah80f4bxhi"

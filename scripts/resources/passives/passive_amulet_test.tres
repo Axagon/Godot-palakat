@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveItemResource" format=3 uid="uid://di0oi4ix75rq8"]
+
+[ext_resource type="Script" uid="uid://dm3iiy32nyaxf" path="res://scripts/player/passive_item_resource.gd" id="1_6h1iu"]
+
+[resource]
+script = ExtResource("1_6h1iu")
+max_health_flat = 1
+max_mana_flat = 50.0
+mana_regen_flat = 1.0
+spell_damage_percent = 0.2
+metadata/_custom_type_script = "uid://dm3iiy32nyaxf"

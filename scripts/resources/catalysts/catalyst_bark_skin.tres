@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://yndqnme6j0uw"]
+
+[ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_eaxye"]
+
+[resource]
+script = ExtResource("1_eaxye")
+catalyst_name = "Corteccia Indurita"
+element = 1
+spell_type = 2
+base_shield_amount = 12.0
+base_mana_cost = 18
+base_cooldown = 2.8
+metadata/_custom_type_script = "uid://dhqxiy4kqwgod"

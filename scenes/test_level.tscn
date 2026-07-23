@@ -1,0 +1,59 @@
+[gd_scene format=4 uid="uid://b5d6ij8rp0tth"]
+
+[ext_resource type="Script" uid="uid://dwf6f3wqa86d1" path="res://scripts/levels/follow_camera.gd" id="1_qcd3b"]
+[ext_resource type="PackedScene" uid="uid://bwj7linpl3h7t" path="res://scenes/player.tscn" id="1_tmr53"]
+[ext_resource type="Script" uid="uid://durdj8kpf8uma" path="res://scripts/levels/level_manager.gd" id="2_tmr53"]
+[ext_resource type="PackedScene" uid="uid://mu7lib4dycpr" path="res://scenes/enemy.tscn" id="3_88ety"]
+[ext_resource type="Resource" uid="uid://6eof0wsk0p6t" path="res://scripts/resources/levels/level_01.tres" id="3_qcd3b"]
+[ext_resource type="PackedScene" uid="uid://2lg5kmpmde78" path="res://scenes/hud.tscn" id="5_7gix3"]
+[ext_resource type="PackedScene" uid="uid://bax74gf3h2y8w" path="res://scenes/outpost.tscn" id="7_88ety"]
+[ext_resource type="PackedScene" uid="uid://bvgs1qwti2q2m" path="res://scenes/level_boundary.tscn" id="7_ahbqi"]
+[ext_resource type="Texture2D" uid="uid://cwmps2r6a8a86" path="res://sprites/backgroundForest.png" id="9_7gix3"]
+[ext_resource type="PackedScene" uid="uid://dle0ig4rbdewy" path="res://scenes/game_overlay.tscn" id="10_4asn1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gix3"]
+texture = ExtResource("9_7gix3")
+texture_region_size = Vector2i(1024, 1024)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o88rc"]
+tile_size = Vector2i(1024, 1024)
+sources/0 = SubResource("TileSetAtlasSource_7gix3")
+
+[node name="TestLevel" type="Node2D" unique_id=1025212634]
+
+[node name="FollowCamera" type="Camera2D" parent="." unique_id=235885495]
+visible = false
+limit_left = 0
+limit_right = 4000
+position_smoothing_enabled = true
+script = ExtResource("1_qcd3b")
+metadata/_custom_type_script = "uid://dwf6f3wqa86d1"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=668175121]
+position = Vector2(0, 512)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAD/////AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_o88rc")
+
+[node name="Player" parent="." unique_id=1263862848 instance=ExtResource("1_tmr53")]
+position = Vector2(100, 300)
+move_speed = 300.0
+
+[node name="LevelManager" type="Node2D" parent="." unique_id=1870492570]
+position = Vector2(3700, 300)
+script = ExtResource("2_tmr53")
+level = ExtResource("3_qcd3b")
+enemy_scene = ExtResource("3_88ety")
+
+[node name="SummonSpawnPoint" type="Marker2D" parent="." unique_id=1341383027 groups=["summon_spawn_point"]]
+position = Vector2(90, 300)
+
+[node name="LevelBoundary" parent="." unique_id=1845524008 instance=ExtResource("7_ahbqi")]
+position = Vector2(0, 300)
+
+[node name="Outpost" parent="." unique_id=178990198 instance=ExtResource("7_88ety")]
+position = Vector2(3750, 300)
+
+[node name="GameOverlay" parent="." unique_id=1340424338 instance=ExtResource("10_4asn1")]
+
+[node name="HUD" parent="." unique_id=1463193356 instance=ExtResource("5_7gix3")]

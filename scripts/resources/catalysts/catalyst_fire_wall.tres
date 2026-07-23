@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://6b423ty26oyd"]
+
+[ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_3c2ym"]
+
+[resource]
+script = ExtResource("1_3c2ym")
+catalyst_name = "Muro di Fuoco"
+spell_type = 2
+base_shield_amount = 15.0
+base_mana_cost = 20
+base_cooldown = 3.0
+metadata/_custom_type_script = "uid://dhqxiy4kqwgod"

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SpellSlotScalingResource" format=3 uid="uid://c6e6xfhq8rooc"]
+
+[ext_resource type="Script" uid="uid://c2wt12g5813pf" path="res://scripts/resources/catalysts/spells/spell_slot_scaling_resource.gd" id="1_acrks"]
+
+[resource]
+script = ExtResource("1_acrks")
+metadata/_custom_type_script = "uid://c2wt12g5813pf"

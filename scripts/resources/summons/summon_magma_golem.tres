@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://cvt6ily25aujq"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_0or26"]
+
+[resource]
+script = ExtResource("1_0or26")
+summon_name = "Golem di Magma"
+category = 0
+food_cost = 30
+max_health = 70
+move_speed = 40.0
+attack_damage = 3
+attack_cooldown = 1.4
+metadata/_custom_type_script = "uid://ch6bw48writhf"

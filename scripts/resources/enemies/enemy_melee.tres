@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://d1l7w4nrg3st"]
+
+[ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_0b4cp"]
+
+[resource]
+script = ExtResource("1_0b4cp")
+enemy_name = "Scheletro"
+max_health = 25
+move_speed = 100.0
+attack_damage = 2
+metadata/_custom_type_script = "uid://bsxpxs45grctb"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShieldResource" format=3 uid="uid://m1t5jcxg44m2"]
+
+[ext_resource type="Script" uid="uid://cc8jthemmhn2f" path="res://scripts/resources/shields/shield_resource.gd" id="1_mgjgj"]
+
+[resource]
+script = ExtResource("1_mgjgj")
+item_name = "Basic Shield"
+max_shield = 10.0
+shield_regen_per_second = 0.4
+metadata/_custom_type_script = "uid://cc8jthemmhn2f"

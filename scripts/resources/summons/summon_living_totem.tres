@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://hyfao0sait1i"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_cpcm5"]
+
+[resource]
+script = ExtResource("1_cpcm5")
+summon_name = "Totem Vivente"
+category = 6
+element = 1
+food_cost = 35
+max_health = 45
+move_speed = 20.0
+attack_cooldown = 1.8
+metadata/_custom_type_script = "uid://ch6bw48writhf"

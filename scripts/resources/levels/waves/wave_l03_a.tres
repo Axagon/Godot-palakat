@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WaveResource" format=3]
+
+[ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="1_script"]
+[ext_resource type="Resource" uid="uid://d1l7w4nrg3st" path="res://scripts/resources/enemies/enemy_melee.tres" id="2_skel"]
+[ext_resource type="Resource" uid="uid://j8ijww5i3oik" path="res://scripts/resources/enemies/enemy_melee_elite.tres" id="3_elite"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_pool = Array[Resource]([ExtResource("2_skel"), ExtResource("3_elite")])
+enemy_count = 5
+spawn_interval = 1.5
+start_time = 0.0
+metadata/_custom_type_script = "uid://b1cah80f4bxhi"
