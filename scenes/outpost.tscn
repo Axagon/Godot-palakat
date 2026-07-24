@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://duhicu606v5y2" path="res://scripts/levels/outpost.gd" id="1_rlhpb"]
 [ext_resource type="Script" uid="uid://ds43mbo8lmm5v" path="res://scripts/player/health_component.gd" id="2_5y5nq"]
+[ext_resource type="Texture2D" uid="uid://c2uukj6dtj68q" path="res://icon.svg" id="2_8j1fj"]
+[ext_resource type="Script" uid="uid://b5my13f3c64e6" path="res://scripts/combat/health_bar.gd" id="4_c34yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o88rc"]
 
@@ -12,6 +14,9 @@ script = ExtResource("1_rlhpb")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1810599142]
 color = Color(0.023529412, 0, 1, 1)
+texture = ExtResource("2_8j1fj")
+polygon = PackedVector2Array(4.5056458, 3.7341871, 120.20813, 4.5606318, 125.993256, 11.172202, 126.8197, 121.916, 115.24945, 129.35402, 7.811432, 128.52757, 0.3734131, 121.916, -2.1059265, 13.651542)
+uv = PackedVector2Array(4.5056458, 3.7341871, 120.20813, 4.5606318, 125.993256, 11.172202, 126.8197, 121.916, 115.24945, 129.35402, 7.811432, 128.52757, 0.3734131, 121.916, -2.1059265, 13.651542)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766181762]
 shape = SubResource("RectangleShape2D_o88rc")
@@ -19,3 +24,18 @@ shape = SubResource("RectangleShape2D_o88rc")
 [node name="HealthComponent" type="Node" parent="." unique_id=630741278]
 script = ExtResource("2_5y5nq")
 metadata/_custom_type_script = "uid://ds43mbo8lmm5v"
+
+[node name="HealthBar" type="Node2D" parent="." unique_id=321310119]
+position = Vector2(-35, -60)
+script = ExtResource("4_c34yj")
+
+[node name="Background" type="ColorRect" parent="HealthBar" unique_id=1563574103]
+offset_right = 70.0
+offset_bottom = 10.0
+offset_transform_enabled = true
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar" unique_id=1355807464]
+offset_right = 70.0
+offset_bottom = 10.0
+color = Color(1.2931612, 0.2836376, 0.2836376, 1)

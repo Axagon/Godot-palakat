@@ -19,6 +19,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="LevelNameLabel" type="Label" parent="Control" unique_id=1159588601]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VirtualJoystick" type="Control" parent="Control" unique_id=341947377]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 1
@@ -43,6 +52,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+
+[node name="SummonCountLabel" type="Label" parent="Control" unique_id=1119055302]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 43.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SummonHandUI" type="Control" parent="Control" unique_id=909824985]
 custom_minimum_size = Vector2(100, 140)
@@ -123,6 +142,19 @@ offset_right = 150.0
 offset_bottom = 20.0
 color = Color(0.9, 0.2, 0.2, 1)
 
+[node name="Label" type="Label" parent="Control/PlayerHealthBar" unique_id=261823236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 110.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayerShieldBar" type="Control" parent="Control" unique_id=1311821866]
 anchors_preset = 0
 offset_left = 20.0
@@ -141,6 +173,19 @@ layout_mode = 0
 offset_right = 150.0
 offset_bottom = 20.0
 color = Color(0, 0, 1, 1)
+
+[node name="Label" type="Label" parent="Control/PlayerShieldBar" unique_id=913186141]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 110.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerManaBar" type="Control" parent="Control" unique_id=1083668281]
 anchors_preset = 0
@@ -161,6 +206,19 @@ offset_right = 150.0
 offset_bottom = 20.0
 color = Color(0.48452926, 0.6651851, 0.95468724, 1)
 
+[node name="Label" type="Label" parent="Control/PlayerManaBar" unique_id=895937279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 110.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayerFoodBar" type="Control" parent="Control" unique_id=871656565]
 anchors_preset = 0
 offset_left = 20.0
@@ -179,3 +237,16 @@ layout_mode = 0
 offset_right = 150.0
 offset_bottom = 20.0
 color = Color(0.95468724, 0.85430586, 0.3491902, 1)
+
+[node name="Label" type="Label" parent="Control/PlayerFoodBar" unique_id=127941445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 110.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -10,3 +10,4 @@ class_name CatalystResource
 @export var base_shield_amount: float = 0.0
 @export var base_mana_cost: int = 10
 @export var base_cooldown: float = 1.5
+@export var base_range: float = 700.0

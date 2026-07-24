@@ -27,12 +27,24 @@ func _ready() -> void:
 		push_warning("EquipmentComponent: slot_scaling non assegnato, uso valori di default 1.0")
 		slot_scaling = SpellSlotScalingResource.new()
 
+	_apply_loadout_selection()
+
 	_equip_slot(base_catalyst, SpellResource.SpellSlot.BASE)
 	_equip_slot(secondary_catalyst, SpellResource.SpellSlot.SECONDARY)
 	_equip_slot(ultimate_catalyst, SpellResource.SpellSlot.ULTIMATE)
 
 	_apply_passive_item()
 	_apply_shield_item()
+	_player.max_summons = _player.base_max_summons + (passive_item.max_summons_bonus if passive_item != null else 0)
+
+
+func _apply_loadout_selection() -> void:
+	if GameState.selected_catalysts[SpellResource.SpellSlot.BASE] != null:
+		base_catalyst = GameState.selected_catalysts[SpellResource.SpellSlot.BASE]
+	if GameState.selected_catalysts[SpellResource.SpellSlot.SECONDARY] != null:
+		secondary_catalyst = GameState.selected_catalysts[SpellResource.SpellSlot.SECONDARY]
+	if GameState.selected_catalysts[SpellResource.SpellSlot.ULTIMATE] != null:
+		ultimate_catalyst = GameState.selected_catalysts[SpellResource.SpellSlot.ULTIMATE]
 	
 
 func _equip_slot(catalyst: CatalystResource, slot: SpellResource.SpellSlot) -> void:
@@ -112,4 +124,5 @@ func _build_spell(catalyst: CatalystResource, slot: SpellResource.SpellSlot) -> 
 	spell.shield_amount = catalyst.base_shield_amount * damage_mult
 	spell.mana_cost = int(round(catalyst.base_mana_cost * mana_mult))
 	spell.cooldown = catalyst.base_cooldown * cooldown_mult
+	spell.spell_range = catalyst.base_range
 	return spell

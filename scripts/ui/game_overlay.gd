@@ -60,6 +60,15 @@ func _on_retry_pressed() -> void:
 
 
 func _on_next_pressed() -> void:
-	# Placeholder: non esiste ancora un sistema di progressione tra livelli
-	# (roadmap punto 4). Per ora si comporta come Riprova.
-	_on_retry_pressed()
+	get_tree().paused = false
+	var current_level: LevelResource = GameState.selected_level
+	var next_index: int = -1
+	if current_level != null:
+		next_index = GameState.all_levels.find(current_level) + 1
+	if next_index >= 0 and next_index < GameState.all_levels.size():
+		var next_level: LevelResource = GameState.all_levels[next_index]
+		if GameState.is_level_unlocked(next_level.level_number):
+			GameState.selected_level = next_level
+			get_tree().change_scene_to_file("res://scenes/loadout_screen.tscn")
+			return
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

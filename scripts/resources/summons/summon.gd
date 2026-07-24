@@ -8,6 +8,7 @@ func _ready() -> void:
 	move_direction = 1.0
 	target_group = "enemies"
 	add_to_group("player_side")
+	add_to_group("active_summons")
 	super._ready()
 	setup(
 		summon_resource.max_health,

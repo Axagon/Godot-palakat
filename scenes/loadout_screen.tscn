@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://60rmvmatlk6y"]
+
+[ext_resource type="Script" uid="uid://b03luv5nbxmqm" path="res://loadout_screen.gd" id="1_vi2hw"]
+
+[node name="LoadoutScreen" type="Control" unique_id=1765399296]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vi2hw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1636155800]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=464247446]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=830391473]
+layout_mode = 2
+text = "Prepara la spedizione"
+
+[node name="CatalystSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1467747348]
+layout_mode = 2
+
+[node name="BaseRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CatalystSection" unique_id=691295977]
+layout_mode = 2
+
+[node name="SecondaryRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CatalystSection" unique_id=1498654590]
+layout_mode = 2
+
+[node name="UltimateRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CatalystSection" unique_id=1580244292]
+layout_mode = 2
+
+[node name="SummonSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1778492435]
+layout_mode = 2
+
+[node name="SectionLabel" type="Label" parent="MarginContainer/VBoxContainer/SummonSection" unique_id=279013132]
+layout_mode = 2
+text = "Mazzo Evocazioni (max. 6)"
+
+[node name="SummonGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/SummonSection" unique_id=1853846444]
+layout_mode = 2
+columns = 4
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1980334932]
+layout_mode = 2
+text = "Inizia livello"

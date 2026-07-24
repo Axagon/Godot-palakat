@@ -10,7 +10,7 @@ signal destroyed
 @export var max_health: int = 100
 
 @onready var health_component: HealthComponent = $HealthComponent
-
+@onready var health_bar: HealthBar = $HealthBar
 
 func _ready() -> void:
 	add_to_group("enemies")
@@ -18,6 +18,7 @@ func _ready() -> void:
 	health_component.max_health = max_health
 	health_component.current_health = max_health
 	health_component.died.connect(_on_died)
+	health_bar.setup(health_component)
 
 
 func apply_damage(amount: int) -> void:

@@ -13,6 +13,7 @@ class_name MainMenu
 
 
 func _ready() -> void:
+	GameState.all_levels = levels
 	_build_level_buttons()
 
 
@@ -31,4 +32,5 @@ func _on_level_selected(index: int) -> void:
 	if index < 0 or index >= levels.size():
 		return
 	GameState.selected_level = levels[index]
-	get_tree().change_scene_to_file(game_scene_path)
+	get_tree().change_scene_to_file("res://scenes/loadout_screen.tscn")
+	

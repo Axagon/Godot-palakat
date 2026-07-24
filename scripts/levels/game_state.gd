@@ -7,9 +7,12 @@ extends Node
 @export var progression_config: ProgressionConfig
 @export var debug_unlock_everything: bool = false
 
+var all_levels: Array[LevelResource] = []
+
 var save_data: SaveData
 var selected_level: LevelResource = null
 var selected_deck: Array[SummonResource] = []
+var selected_catalysts: Array[CatalystResource] = [null, null, null]  # indice = SpellResource.SpellSlot
 
 const SAVE_PATH: String = "user://savegame.tres"
 
@@ -63,6 +66,7 @@ func _check_catalyst_unlock(level_number: int) -> void:
 	var offset: int = level_number - cfg.catalyst_unlock_first_level
 	if offset % cfg.catalyst_unlock_interval != 0:
 		return
+	@warning_ignore("integer_division")
 	var queue_index: int = offset / cfg.catalyst_unlock_interval
 	if queue_index < cfg.catalyst_unlock_queue.size():
 		var unlocked: CatalystResource = cfg.catalyst_unlock_queue[queue_index]
@@ -77,8 +81,10 @@ func _check_summon_unlock(level_number: int) -> void:
 	var offset: int = level_number - cfg.summon_unlock_first_level
 	if offset % cfg.summon_unlock_interval != 0:
 		return
+	@warning_ignore("integer_division")
 	var queue_index: int = offset / cfg.summon_unlock_interval
 	if queue_index < cfg.summon_unlock_queue.size():
 		var unlocked: SummonResource = cfg.summon_unlock_queue[queue_index]
 		if not save_data.owned_summons.has(unlocked):
 			save_data.owned_summons.append(unlocked)
+			

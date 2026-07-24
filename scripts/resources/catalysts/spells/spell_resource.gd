@@ -9,6 +9,7 @@ enum SpellType { OFFENSIVE, HEAL, SHIELD }
 @export var slot: SpellSlot = SpellSlot.BASE
 @export var element: Element = Element.FIRE
 @export var spell_type: SpellType = SpellType.OFFENSIVE
+@export var spell_range: float = 700.0
 
 @export var mana_cost: int = 10
 @export var cooldown: float = 1.5

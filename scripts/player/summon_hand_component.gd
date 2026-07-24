@@ -20,6 +20,8 @@ var _draw_timer: float = 0.0
 
 
 func _ready() -> void:
+	if not GameState.selected_deck.is_empty():
+		deck = GameState.selected_deck
 	hand.resize(hand_size)
 	hand.fill(null)
 	_draw_random_card()
@@ -41,6 +43,11 @@ func play_card(slot_index: int) -> SummonResource:
 		return null
 	if not food_component.has_enough_food(card.food_cost):
 		card_play_failed.emit(card, "food")
+		return null
+	var player: Player = get_parent()
+	var active_count: int = get_tree().get_nodes_in_group("active_summons").size()
+	if active_count >= player.max_summons:
+		card_play_failed.emit(card, "max_summons")
 		return null
 	food_component.consume_food(card.food_cost)
 	hand[slot_index] = null

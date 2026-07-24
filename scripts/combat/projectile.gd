@@ -1,14 +1,13 @@
+# projectile.gd
 extends Area2D
 class_name Projectile
 
-# Proiettile generico per magie a distanza. Si muove in linea retta nella
-# direzione impostata da set_direction() e infligge danno al primo bersaglio
-# valido che colpisce, poi si distrugge.
-
 @export var speed: float = 500.0
 @export var damage: int = 0
+@export var max_range: float = 400.0
 
 var _direction: Vector2 = Vector2.RIGHT
+var _distance_traveled: float = 0.0
 
 
 func _ready() -> void:
@@ -21,7 +20,11 @@ func set_direction(facing: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	position += _direction * speed * delta
+	var movement: Vector2 = _direction * speed * delta
+	position += movement
+	_distance_traveled += movement.length()
+	if _distance_traveled >= max_range:
+		queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:

@@ -5,6 +5,9 @@ class_name Player
 @export var projectile_scene: PackedScene
 @export var summon_scene: PackedScene
 
+@export var base_max_summons: int = 3
+var max_summons: int = 3
+
 @export var base_spell: SpellResource
 @export var secondary_spell: SpellResource
 @export var ultimate_spell: SpellResource
@@ -74,10 +77,11 @@ func _cast_offensive(spell: SpellResource, bonus_multiplier: float) -> void:
 		return
 	var projectile: Projectile = projectile_scene.instantiate()
 	projectile.damage = int(round(spell.damage * bonus_multiplier))
+	projectile.max_range = spell.spell_range
 	projectile.global_position = global_position
 	get_tree().current_scene.add_child(projectile)
 	projectile.set_direction(facing_direction)
-	
+		
 
 func _on_card_played(card: SummonResource) -> void:
 	if summon_scene == null:

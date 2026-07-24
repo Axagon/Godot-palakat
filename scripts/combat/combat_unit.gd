@@ -22,6 +22,7 @@ var _move_speed: float = 0.0
 var _attack_damage: int = 0
 var _attack_cooldown: float = 0.0
 var _attack_projectile_scene: PackedScene = null
+var _attack_range: float = 40.0  # nuova, accanto alle altre _attack_* esistenti
 
 
 func _ready() -> void:
@@ -38,6 +39,7 @@ func setup(max_health: int, move_speed: float, attack_damage: int, attack_cooldo
 	_attack_damage = attack_damage
 	_attack_cooldown = attack_cooldown
 	_attack_projectile_scene = projectile_scene
+	_attack_range = attack_range
 	category = unit_category
 	_target_priority = target_priority
 	_apply_attack_range(attack_range)
@@ -87,6 +89,7 @@ func _perform_attack() -> void:
 func _fire_projectile() -> void:
 	var projectile: Projectile = _attack_projectile_scene.instantiate()
 	projectile.damage = _attack_damage
+	projectile.max_range = _attack_range
 	projectile.global_position = global_position
 	projectile.collision_layer = 0
 	projectile.collision_mask = _get_target_physics_mask()
