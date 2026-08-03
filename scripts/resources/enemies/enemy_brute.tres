@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="EnemyResource" format=3]
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://qp2bw4v4luha"]
 
-[ext_resource type="Script" path="res://scripts/resources/enemy_resource.gd" uid="uid://bsxpxs45grctb" id="1_script"]
+[ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://sprites/enemies/tank/enemy_brute_sprite_frames.tres" id="2_r556g"]
 
 [resource]
 script = ExtResource("1_script")
 enemy_name = "Bruto Osseo"
+sprite_frames = ExtResource("2_r556g")
 category = 0
 max_health = 45
 move_speed = 50.0

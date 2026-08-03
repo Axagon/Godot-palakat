@@ -11,4 +11,5 @@ max_health = 22
 move_speed = 90.0
 attack_damage = 4
 attack_cooldown = 0.9
+regen_per_second = 0.8
 metadata/_custom_type_script = "uid://ch6bw48writhf"

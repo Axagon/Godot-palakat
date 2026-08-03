@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://crjfrkkf85ptx"]
+
+[ext_resource type="Script" uid="uid://cyrjwiia5ger7" path="res://scripts/enemy/dragon.gd" id="1_7fr0w"]
+[ext_resource type="SpriteFrames" uid="uid://mhqd2saxr0vi" path="res://sprites/bosses/dragon_sprite_frames.tres" id="2_7fr0w"]
+[ext_resource type="Script" uid="uid://ds43mbo8lmm5v" path="res://scripts/player/health_component.gd" id="3_y46cm"]
+[ext_resource type="Script" uid="uid://b5my13f3c64e6" path="res://scripts/combat/health_bar.gd" id="4_2yk6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnpn"]
+size = Vector2(90, 90)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oykm7"]
+radius = 70.0
+
+[node name="Dragon" type="CharacterBody2D" unique_id=1378252537]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_7fr0w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=177015127]
+position = Vector2(-30, -10)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_7fr0w")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847133483]
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_uvnpn")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=784591719]
+script = ExtResource("3_y46cm")
+metadata/_custom_type_script = "uid://ds43mbo8lmm5v"
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=924907398]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=30082889]
+position = Vector2(7, -10)
+shape = SubResource("CircleShape2D_oykm7")
+
+[node name="HealthBar" type="Node2D" parent="." unique_id=405315973]
+position = Vector2(-32, -84)
+scale = Vector2(2, 2)
+script = ExtResource("4_2yk6i")
+
+[node name="Background" type="ColorRect" parent="HealthBar" unique_id=671108553]
+offset_right = 40.0
+offset_bottom = 6.0
+offset_transform_enabled = true
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Fill" type="ColorRect" parent="HealthBar" unique_id=1325878994]
+offset_right = 40.0
+offset_bottom = 6.0
+color = Color(1.2931612, 0.2836376, 0.2836376, 1)
+metadata/_edit_use_anchors_ = true

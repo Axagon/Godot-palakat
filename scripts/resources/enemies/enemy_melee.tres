@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://d1l7w4nrg3st"]
 
 [ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_0b4cp"]
+[ext_resource type="SpriteFrames" uid="uid://c6yu8hh1t27dm" path="res://sprites/enemies/melee/enemy_melee_sprite_frames.tres" id="2_qqxlx"]
 
 [resource]
 script = ExtResource("1_0b4cp")
 enemy_name = "Scheletro"
+sprite_frames = ExtResource("2_qqxlx")
 max_health = 25
 move_speed = 100.0
 attack_damage = 2

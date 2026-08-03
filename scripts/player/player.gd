@@ -5,8 +5,8 @@ class_name Player
 @export var projectile_scene: PackedScene
 @export var summon_scene: PackedScene
 
-@export var base_max_summons: int = 3
-var max_summons: int = 3
+@export var base_max_summons: int = 5
+var max_summons: int = 5
 
 @export var base_spell: SpellResource
 @export var secondary_spell: SpellResource
@@ -61,6 +61,10 @@ func apply_damage(amount: int) -> void:
 		health_component.take_damage(remaining_damage)
 
 
+func apply_heal(amount: int) -> void:
+	health_component.heal(amount)
+
+
 func _on_spell_cast(spell: SpellResource) -> void:
 	var bonus_multiplier: float = 1.0 + equipment.spell_damage_percent
 	match spell.spell_type:
@@ -75,20 +79,29 @@ func _on_spell_cast(spell: SpellResource) -> void:
 func _cast_offensive(spell: SpellResource, bonus_multiplier: float) -> void:
 	if projectile_scene == null:
 		return
-	var projectile: Projectile = projectile_scene.instantiate()
-	projectile.damage = int(round(spell.damage * bonus_multiplier))
+	var projectile: Projectile = ObjectPool.get_instance(projectile_scene)
+	projectile.source_scene = projectile_scene
+	projectile.reset_state()
+	var final_damage: int = int(round(spell.damage * bonus_multiplier))
+	projectile.damage = final_damage
 	projectile.max_range = spell.spell_range
+	projectile.applies_burn = spell.element == SpellResource.Element.FIRE
+	projectile.burn_damage = int(round(final_damage * CombatUnit.FIRE_BURN_DAMAGE_PERCENT)) if projectile.applies_burn else 0
+	projectile.burn_duration = CombatUnit.FIRE_BURN_DURATION
 	projectile.global_position = global_position
-	get_tree().current_scene.add_child(projectile)
-	projectile.set_direction(facing_direction)
-		
+	if projectile.get_parent() == null:
+		get_tree().current_scene.add_child(projectile)
+	projectile.set_direction(facing_direction)	
+
 
 func _on_card_played(card: SummonResource) -> void:
-	if summon_scene == null:
+	var scene_to_use: PackedScene = card.summon_scene_override if card.summon_scene_override != null else summon_scene
+	if scene_to_use == null:
 		return
-	var summon: Summon = summon_scene.instantiate()
+	var summon: Summon = scene_to_use.instantiate()
 	summon.summon_resource = card
-	
+
 	var spawn_point: Node2D = get_tree().get_first_node_in_group("summon_spawn_point")
 	summon.global_position = spawn_point.global_position if spawn_point != null else global_position
 	get_tree().current_scene.add_child(summon)
+	

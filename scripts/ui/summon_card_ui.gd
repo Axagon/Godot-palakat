@@ -1,10 +1,9 @@
 extends Control
 class_name SummonCardUI
 
-# Rappresentazione visiva di una singola carta nella mano evocazioni.
-
 @onready var name_label: Label = $NameLabel
 @onready var food_label: Label = $FoodLabel
+@onready var icon_texture: TextureRect = $IconTexture
 
 var card: SummonResource = null
 
@@ -15,3 +14,5 @@ func set_card(new_card: SummonResource) -> void:
 	if card != null:
 		name_label.text = card.summon_name
 		food_label.text = str(card.food_cost)
+		icon_texture.texture = card.icon
+		icon_texture.visible = card.icon != null

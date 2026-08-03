@@ -4,15 +4,36 @@
 
 [node name="LoadoutScreen" type="Control" unique_id=1765399296]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_vi2hw")
 
+[node name="Background" type="Panel" parent="." unique_id=956200908]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1636155800]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -46.5
+offset_right = 140.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_position = Vector2(200, 200)
+offset_transform_scale = Vector2(1.5, 1.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=464247446]
 layout_mode = 2

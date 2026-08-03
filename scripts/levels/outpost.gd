@@ -25,6 +25,10 @@ func apply_damage(amount: int) -> void:
 	health_component.take_damage(amount)
 
 
+func apply_burn(total_damage: int, duration: float) -> void:
+	health_component.apply_burn(total_damage, duration)
+
+
 func _on_died() -> void:
 	destroyed.emit()
 	queue_free()

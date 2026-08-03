@@ -5,7 +5,4 @@
 [resource]
 script = ExtResource("1_0o68c")
 summon_name = "Salamandra"
-max_health = 25
-move_speed = 70.0
-attack_damage = 4
 metadata/_custom_type_script = "uid://ch6bw48writhf"

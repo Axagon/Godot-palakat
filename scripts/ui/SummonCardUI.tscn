@@ -9,8 +9,9 @@ font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
 [node name="SummonCardUi" type="Control" unique_id=1676060648]
-custom_minimum_size = Vector2(100, 140)
+custom_minimum_size = Vector2(125, 175)
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -19,17 +20,25 @@ mouse_filter = 2
 script = ExtResource("1_akew1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1593037930]
-custom_minimum_size = Vector2(100, 140)
+custom_minimum_size = Vector2(125, 175)
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 140.0
+offset_right = 125.0
+offset_bottom = 175.0
 mouse_filter = 2
+
+[node name="IconTexture" type="TextureRect" parent="." unique_id=1804872677]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 123.0
+offset_bottom = 173.0
 
 [node name="NameLabel" type="Label" parent="." unique_id=2001350480]
 layout_mode = 0
-offset_left = 1.0
-offset_right = 100.0
-offset_bottom = 23.0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 31.0
 text = "Nome carta"
 label_settings = SubResource("LabelSettings_akew1")
 horizontal_alignment = 3
@@ -37,10 +46,10 @@ vertical_alignment = 1
 
 [node name="FoodLabel" type="Label" parent="." unique_id=863610793]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 117.0
-offset_right = 99.0
-offset_bottom = 140.0
+offset_left = 15.0
+offset_top = 144.0
+offset_right = 113.0
+offset_bottom = 167.0
 text = "10"
 label_settings = SubResource("LabelSettings_j32q0")
 horizontal_alignment = 2

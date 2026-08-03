@@ -22,6 +22,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	super._process(delta)
 	if _boss_resource == null:
 		return
 	_update_aoe(delta)
@@ -54,7 +55,14 @@ func _update_reinforcements(delta: float) -> void:
 
 
 func _spawn_reinforcement() -> void:
-	var reinforcement: Enemy = _boss_resource.reinforcement_scene.instantiate()
-	reinforcement.enemy_resource = _boss_resource.reinforcement_enemy_resource
-	reinforcement.global_position = global_position
-	get_tree().current_scene.add_child(reinforcement)
+	Enemy.spawn_or_reuse(_boss_resource.reinforcement_scene, _boss_resource.reinforcement_enemy_resource, global_position, get_tree().current_scene)
+
+
+func reuse_with_resource(new_resource: EnemyResource) -> void:
+	super.reuse_with_resource(new_resource)
+	_boss_resource = enemy_resource as BossResource
+	if _boss_resource == null:
+		push_warning("Boss: enemy_resource assegnata non e' una BossResource")
+		return
+	_aoe_timer = _boss_resource.aoe_interval
+	_reinforcement_timer = _boss_resource.reinforcement_interval

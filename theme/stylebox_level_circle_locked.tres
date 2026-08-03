@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://b4q0memi4n45x"]
+
+[ext_resource type="Texture2D" uid="uid://drtqs2hx0mi5v" path="res://sprites/ui/level_circle_locked.tres" id="1_gpl1q"]
+
+[resource]
+texture = ExtResource("1_gpl1q")

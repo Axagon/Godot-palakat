@@ -6,3 +6,4 @@
 [node name="GameState" type="Node" unique_id=451600808]
 script = ExtResource("1_jy5aj")
 progression_config = ExtResource("2_a1qx6")
+debug_unlock_everything = true

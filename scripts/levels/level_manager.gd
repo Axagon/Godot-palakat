@@ -59,6 +59,12 @@ func _update_wave(index: int, delta: float) -> void:
 		_spawn_wave_enemy(index, wave)
 
 
+func _spawn_enemy(enemy_resource: EnemyResource, scene: PackedScene) -> void:
+	if enemy_resource == null or scene == null:
+		return
+	Enemy.spawn_or_reuse(scene, enemy_resource, global_position, get_tree().current_scene)
+
+
 func _spawn_wave_enemy(index: int, wave: WaveResource) -> void:
 	_wave_spawned_counts[index] += 1
 	_wave_timers[index] = wave.spawn_interval
@@ -72,15 +78,6 @@ func _pick_from_pool(wave: WaveResource) -> EnemyResource:
 		push_warning("WaveResource senza enemy_pool: nessun nemico generato")
 		return null
 	return wave.enemy_pool[randi() % wave.enemy_pool.size()]
-
-
-func _spawn_enemy(enemy_resource: EnemyResource, scene: PackedScene) -> void:
-	if enemy_resource == null or scene == null:
-		return
-	var enemy: Enemy = scene.instantiate()
-	enemy.enemy_resource = enemy_resource
-	enemy.global_position = global_position
-	get_tree().current_scene.add_child(enemy)
 
 
 func _on_outpost_destroyed() -> void:

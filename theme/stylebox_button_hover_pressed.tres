@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bbwdp4dh65nvu"]
+
+[ext_resource type="Texture2D" uid="uid://do1djjpqi0c45" path="res://sprites/ui/button_generic_hover.tres" id="1_yq7if"]
+
+[resource]
+texture = ExtResource("1_yq7if")

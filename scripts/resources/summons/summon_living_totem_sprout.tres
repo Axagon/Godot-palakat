@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://dseunwoyw3qx6"]
+
+[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_oq0f0"]
+
+[resource]
+script = ExtResource("1_oq0f0")
+summon_name = "Germoglio del Totem"
+element = 1
+food_cost = 99
+max_health = 12
+move_speed = 125.0
+attack_damage = 4
+attack_cooldown = 1.3
+metadata/_custom_type_script = "uid://ch6bw48writhf"

@@ -1,9 +1,10 @@
 extends Resource
 class_name EnemyResource
 
-# Definizione dati di un nemico. Nessuna logica qui, solo statistiche.
-
 @export var enemy_name: String = ""
+@export var tint_color: Color = Color(1, 1, 1, 1)
+@export var sprite_frames: SpriteFrames = null
+@export var invert_sprite_flip: bool = false
 @export var category: CombatUnit.Category = CombatUnit.Category.MELEE
 
 @export var attack_projectile_scene: PackedScene = null

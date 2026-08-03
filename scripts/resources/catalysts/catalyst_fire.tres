@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://bpccr8brapcen"]
 
+[ext_resource type="Texture2D" uid="uid://dkfckoccx1m2o" path="res://sprites/catalysts/catalyst_fire.png" id="1_sp2t7"]
 [ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_vkly8"]
 
 [resource]
 script = ExtResource("1_vkly8")
 catalyst_name = "Dardo di Fuoco"
+icon = ExtResource("1_sp2t7")
 base_damage = 8
 base_mana_cost = 8
 base_cooldown = 1.0

@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://c1505pw4xxcy0"]
+
+[ext_resource type="Texture2D" uid="uid://nf1t5w0ch3bw" path="res://sprites/ui/level_circle_hover.tres" id="1_tlldv"]
+
+[resource]
+texture = ExtResource("1_tlldv")

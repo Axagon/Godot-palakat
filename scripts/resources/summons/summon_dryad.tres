@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://o8i7dl0crqy1"]
+[gd_resource type="Resource" script_class="HealerResource" format=3 uid="uid://o8i7dl0crqy1"]
 
-[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_03ypa"]
+[ext_resource type="Script" uid="uid://cong8uf604kce" path="res://scripts/resources/summons/summon_healer_resource.gd" id="1_ishtt"]
+[ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="1_v4a5r"]
+[ext_resource type="PackedScene" uid="uid://cbj5vo1iepwxp" path="res://scenes/healer.tscn" id="2_v4a5r"]
 
 [resource]
-script = ExtResource("1_03ypa")
+script = ExtResource("1_ishtt")
 summon_name = "Driade"
 category = 5
 element = 1
+attack_projectile_scene = ExtResource("1_v4a5r")
+summon_scene_override = ExtResource("2_v4a5r")
 food_cost = 25
 max_health = 16
 move_speed = 50.0
-attack_cooldown = 1.5
+attack_range = 125.0
+attack_cooldown = 2.5
+regen_per_second = 1.5
 metadata/_custom_type_script = "uid://ch6bw48writhf"

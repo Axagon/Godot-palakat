@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WaveResource" format=3 uid="uid://cs14tigjk67p7"]
+
+[ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_njfhx"]
+[ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="2_cg05p"]
+[ext_resource type="Resource" uid="uid://cng4gp8wjik21" path="res://scripts/resources/enemies/dragon_final_boss.tres" id="2_tsdkb"]
+[ext_resource type="PackedScene" uid="uid://crjfrkkf85ptx" path="res://scenes/dragon.tscn" id="3_7k3qk"]
+
+[resource]
+script = ExtResource("2_cg05p")
+enemy_pool = Array[ExtResource("1_njfhx")]([ExtResource("2_tsdkb")])
+enemy_count = 1
+start_time = 15.0
+enemy_scene_override = ExtResource("3_7k3qk")
+metadata/_custom_type_script = "uid://b1cah80f4bxhi"

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://b7rs55c78mgdo"]
+[gd_resource type="Resource" script_class="SupportResource" format=3 uid="uid://b7rs55c78mgdo"]
 
-[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_v6j5c"]
+[ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="1_22muw"]
+[ext_resource type="Script" uid="uid://chnipktisuvr1" path="res://scripts/resources/summons/summon_support_resource.gd" id="1_v6j5c"]
 
 [resource]
 script = ExtResource("1_v6j5c")
 summon_name = "Spirito dei Rovi"
 category = 3
 element = 1
-food_cost = 22
-attack_damage = 3
-attack_cooldown = 1.2
+attack_projectile_scene = ExtResource("1_22muw")
+attack_range = 125.0
 metadata/_custom_type_script = "uid://ch6bw48writhf"

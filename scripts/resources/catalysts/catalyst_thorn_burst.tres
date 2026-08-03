@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://ddr6pscj7go8r"]
 
+[ext_resource type="Texture2D" uid="uid://fwc3fo658uob" path="res://sprites/catalysts/catalyst_thorn_burst.png" id="1_8wq1a"]
 [ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_p6t6c"]
 
 [resource]
 script = ExtResource("1_p6t6c")
 catalyst_name = "Raffica di spine"
+icon = ExtResource("1_8wq1a")
 element = 1
 base_damage = 12
 base_mana_cost = 14

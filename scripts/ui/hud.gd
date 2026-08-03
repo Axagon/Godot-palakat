@@ -6,10 +6,11 @@ class_name HUD
 @onready var secondary_button: Button = $Control/SpellButtons/SecondaryButton
 @onready var ultimate_button: Button = $Control/SpellButtons/UltimateButton
 
-@onready var player_health_fill: ColorRect = $Control/PlayerHealthBar/Fill
-@onready var player_mana_fill: ColorRect = $Control/PlayerManaBar/Fill
-@onready var player_food_fill: ColorRect = $Control/PlayerFoodBar/Fill
-@onready var player_shield_fill: ColorRect = $Control/PlayerShieldBar/Fill
+@onready var player_health_fill: Panel = $Control/PlayerHealthBar/Fill
+@onready var player_mana_fill: Panel = $Control/PlayerManaBar/Fill
+@onready var player_food_fill: Panel = $Control/PlayerFoodBar/Fill
+@onready var player_shield_fill: Panel = $Control/PlayerShieldBar/Fill
+
 @onready var player_health_label: Label = $Control/PlayerHealthBar/Label
 @onready var player_mana_label: Label = $Control/PlayerManaBar/Label
 @onready var player_food_label: Label = $Control/PlayerFoodBar/Label

@@ -11,8 +11,8 @@ signal card_play_failed(card: SummonResource, reason: String)
 @export var deck: Array[SummonResource] = []
 @export var food_component: FoodComponent
 @export var hand_size: int = 5
-@export var min_draw_interval: float = 5.0
-@export var max_draw_interval: float = 15.0
+@export var min_draw_interval: float = 3.5
+@export var max_draw_interval: float = 10.0
 
 var hand: Array = []
 

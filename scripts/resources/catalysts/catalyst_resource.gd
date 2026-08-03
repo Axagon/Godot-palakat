@@ -2,6 +2,7 @@ extends Resource
 class_name CatalystResource
 
 @export var catalyst_name: String = ""
+@export var icon: Texture2D = null
 @export var element: SpellResource.Element = SpellResource.Element.FIRE
 @export var spell_type: SpellResource.SpellType = SpellResource.SpellType.OFFENSIVE
 
@@ -10,4 +11,4 @@ class_name CatalystResource
 @export var base_shield_amount: float = 0.0
 @export var base_mana_cost: int = 10
 @export var base_cooldown: float = 1.5
-@export var base_range: float = 700.0
+@export var base_range: float = 1000.0

@@ -16,7 +16,4 @@ func _process(delta: float) -> void:
 
 
 func _spawn_enemy() -> void:
-	var enemy: Enemy = enemy_scene.instantiate()
-	enemy.enemy_resource = enemy_resource
-	enemy.global_position = global_position
-	get_tree().current_scene.add_child(enemy)
+	Enemy.spawn_or_reuse(enemy_scene, enemy_resource, global_position, get_tree().current_scene)

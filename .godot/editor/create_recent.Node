@@ -1,3 +1,7 @@
+AnimatedSprite2D
+Panel
+TextureRect
+ColorRect
 Label
 Button
 GridContainer
@@ -8,7 +12,3 @@ Control
 Decal
 CollisionShape2D
 HealthBar
-Area2D
-HealthComponent
-Polygon2D
-CharacterBody2D

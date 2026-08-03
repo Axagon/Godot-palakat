@@ -3,16 +3,21 @@
 [ext_resource type="Script" uid="uid://ba7cmg10cfe6r" path="res://scripts/resources/enemies/boss_resource.gd" id="1_qyohs"]
 [ext_resource type="Resource" uid="uid://d1l7w4nrg3st" path="res://scripts/resources/enemies/enemy_melee.tres" id="1_v550c"]
 [ext_resource type="PackedScene" uid="uid://mu7lib4dycpr" path="res://scenes/enemy.tscn" id="2_ksxfr"]
+[ext_resource type="SpriteFrames" uid="uid://dbxj0xl2tq0rb" path="res://sprites/bosses/mini_boss/mini_boss_sprite_frames.tres" id="4_wxydn"]
 
 [resource]
 script = ExtResource("1_qyohs")
-aoe_damage = 5
+aoe_damage = 0
 aoe_radius = 150.0
 aoe_interval = 4.0
 reinforcement_scene = ExtResource("2_ksxfr")
 reinforcement_enemy_resource = ExtResource("1_v550c")
 reinforcement_interval = 6.0
 enemy_name = "Test Boss"
+sprite_frames = ExtResource("4_wxydn")
+invert_sprite_flip = true
 max_health = 200
-attack_range = 120.0
+attack_damage = 5
+attack_range = 80.0
+attack_cooldown = 1.1
 metadata/_custom_type_script = "uid://ba7cmg10cfe6r"

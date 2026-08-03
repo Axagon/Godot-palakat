@@ -36,11 +36,35 @@ func _build_catalyst_row(row: HBoxContainer, slot: SpellResource.SpellSlot, owne
 		button.text = catalyst.catalyst_name
 		button.toggle_mode = true
 		button.button_group = group
-		button.custom_minimum_size = Vector2(120, 50)
+		button.custom_minimum_size = Vector2(120, 70)
 		button.pressed.connect(_on_catalyst_selected.bind(slot, catalyst))
+		_add_icon_to_button(button, catalyst.icon)
 		row.add_child(button)
 		_catalyst_buttons[slot][catalyst] = button
 
+
+func _build_summon_grid() -> void:
+	var owned: Array[SummonResource] = GameState.get_owned_summons()
+	for summon in owned:
+		var button := Button.new()
+		button.text = summon.summon_name
+		button.toggle_mode = true
+		button.custom_minimum_size = Vector2(120, 70)
+		button.pressed.connect(_on_summon_toggled.bind(summon, button))
+		_add_icon_to_button(button, summon.icon)
+		summon_grid.add_child(button)
+		if _selected_summons.size() < deck_max_size:
+			_selected_summons.append(summon)
+			button.button_pressed = true
+
+
+func _add_icon_to_button(button: Button, icon: Texture2D) -> void:
+	if icon == null:
+		return
+	button.icon = icon
+	button.expand_icon = false
+	button.add_theme_constant_override("icon_max_width", 60)
+	button.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP	
 
 func _apply_default_catalyst_selection(owned: Array[CatalystResource]) -> void:
 	# Ogni catalizzatore posseduto viene assegnato di default ad UN solo
@@ -63,20 +87,6 @@ func _on_catalyst_selected(slot: SpellResource.SpellSlot, catalyst: CatalystReso
 			_selected_catalysts[other_slot] = null
 			_catalyst_buttons[other_slot][catalyst].button_pressed = false
 	_selected_catalysts[slot] = catalyst
-
-
-func _build_summon_grid() -> void:
-	var owned: Array[SummonResource] = GameState.get_owned_summons()
-	for summon in owned:
-		var button := Button.new()
-		button.text = summon.summon_name
-		button.toggle_mode = true
-		button.custom_minimum_size = Vector2(120, 50)
-		button.pressed.connect(_on_summon_toggled.bind(summon, button))
-		summon_grid.add_child(button)
-		if _selected_summons.size() < deck_max_size:
-			_selected_summons.append(summon)
-			button.button_pressed = true
 
 
 func _on_summon_toggled(summon: SummonResource, button: Button) -> void:

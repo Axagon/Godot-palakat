@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://bdo43dld0amvf"]
+
+[ext_resource type="Script" uid="uid://cygrejrg4iqqf" path="res://scripts/resources/levels/level_resource.gd" id="1_tdm7k"]
+[ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="2_i5imf"]
+[ext_resource type="Resource" uid="uid://dwxabfeh23k6h" path="res://scripts/resources/levels/waves/wave_l11_a.tres" id="3_svkha"]
+[ext_resource type="Resource" uid="uid://cs14tigjk67p7" path="res://scripts/resources/levels/waves/wave_l11_b.tres" id="4_71pmg"]
+
+[resource]
+script = ExtResource("1_tdm7k")
+level_number = 11
+level_name = "Level 11"
+waves = Array[ExtResource("2_i5imf")]([ExtResource("3_svkha"), ExtResource("4_71pmg")])
+level_index_in_world = 11
+metadata/_custom_type_script = "uid://cygrejrg4iqqf"

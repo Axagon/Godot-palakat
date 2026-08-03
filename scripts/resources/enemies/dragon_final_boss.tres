@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DragonBossResource" format=3 uid="uid://cng4gp8wjik21"]
+
+[ext_resource type="Resource" uid="uid://d1l7w4nrg3st" path="res://scripts/resources/enemies/enemy_melee.tres" id="1_5q8cb"]
+[ext_resource type="Script" uid="uid://ctp450o2n21s2" path="res://scripts/resources/enemies/dragon_boss_resource.gd" id="1_neews"]
+[ext_resource type="PackedScene" uid="uid://mu7lib4dycpr" path="res://scenes/enemy.tscn" id="2_pdppp"]
+
+[resource]
+script = ExtResource("1_neews")
+aoe_damage = 10
+aoe_radius = 180.0
+reinforcement_scene = ExtResource("2_pdppp")
+reinforcement_enemy_resource = ExtResource("1_5q8cb")
+reinforcement_interval = 10.0
+enemy_name = "Drago"
+invert_sprite_flip = true
+max_health = 350
+move_speed = 30.0
+attack_damage = 8
+attack_range = 140.0
+attack_cooldown = 1.5
+metadata/_custom_type_script = "uid://ctp450o2n21s2"

@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="2_proj"]
+[ext_resource type="SpriteFrames" path="res://sprites/enemies/archer/enemy_archer_sprite_frames.tres" id="3_c01re"]
 
 [resource]
 script = ExtResource("1_script")
 enemy_name = "Arciere Scheletro"
+sprite_frames = ExtResource("3_c01re")
 category = 2
 attack_projectile_scene = ExtResource("2_proj")
 max_health = 12

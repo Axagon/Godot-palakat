@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="CatalystResource" format=3 uid="uid://dyg4lwff1ganv"]
 
 [ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_o2tv2"]
+[ext_resource type="Texture2D" uid="uid://dqnf8srfbaf3s" path="res://sprites/catalysts/catalyst_thorn_whip.png" id="1_vq261"]
 
 [resource]
 script = ExtResource("1_o2tv2")
 catalyst_name = "Frusta di Rovi"
+icon = ExtResource("1_vq261")
 element = 1
 base_damage = 7
 base_mana_cost = 14

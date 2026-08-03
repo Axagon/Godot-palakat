@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://hyfao0sait1i"]
+[gd_resource type="Resource" script_class="SummonerResource" format=3 uid="uid://hyfao0sait1i"]
 
-[ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_cpcm5"]
+[ext_resource type="PackedScene" uid="uid://dgtqst2ikbss6" path="res://scenes/summon.tscn" id="1_o6hre"]
+[ext_resource type="Resource" uid="uid://dseunwoyw3qx6" path="res://scripts/resources/summons/summon_living_totem_sprout.tres" id="2_2sf5t"]
+[ext_resource type="Script" uid="uid://3ouvjrg0o3uh" path="res://scripts/resources/summons/summoner_resource.gd" id="3_shj7l"]
+[ext_resource type="PackedScene" uid="uid://bgrhhwpefbx21" path="res://scenes/summoner.tscn" id="4_2sf5t"]
 
 [resource]
-script = ExtResource("1_cpcm5")
+script = ExtResource("3_shj7l")
+reinforcement_scene = ExtResource("1_o6hre")
+reinforcement_summon_resource = ExtResource("2_2sf5t")
 summon_name = "Totem Vivente"
-category = 6
-element = 1
+summon_scene_override = ExtResource("4_2sf5t")
 food_cost = 35
-max_health = 45
-move_speed = 20.0
-attack_cooldown = 1.8
+max_health = 25
+move_speed = 30.0
+attack_damage = 1
+attack_cooldown = 1.2
+regen_per_second = 0.8
 metadata/_custom_type_script = "uid://ch6bw48writhf"

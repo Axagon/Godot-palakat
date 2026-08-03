@@ -3,23 +3,40 @@
 [ext_resource type="Script" uid="uid://co414rj0n8o3v" path="res://scripts/ui/main_menu/main_menu.gd" id="1_s4xhi"]
 [ext_resource type="Script" uid="uid://cygrejrg4iqqf" path="res://scripts/resources/levels/level_resource.gd" id="2_my85g"]
 [ext_resource type="Resource" uid="uid://6eof0wsk0p6t" path="res://scripts/resources/levels/level_01.tres" id="3_kad7n"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_02.tres" id="4_yoys1"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_03.tres" id="5_gk1yv"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_04.tres" id="6_1fovh"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_05.tres" id="7_vyj17"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_06.tres" id="8_t14sa"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_07.tres" id="9_kkqwa"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_08.tres" id="10_y0ae4"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_09.tres" id="11_se6hr"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_10.tres" id="12_qjfr2"]
+[ext_resource type="Resource" uid="uid://dey6y8058twlr" path="res://scripts/resources/levels/level_02.tres" id="4_yoys1"]
+[ext_resource type="Resource" uid="uid://cxmt4lxonpov1" path="res://scripts/resources/levels/level_03.tres" id="5_gk1yv"]
+[ext_resource type="Resource" uid="uid://2bfsex0lg6b" path="res://scripts/resources/levels/level_04.tres" id="6_1fovh"]
+[ext_resource type="Resource" uid="uid://b4ooea4bcftaf" path="res://scripts/resources/levels/level_05.tres" id="7_vyj17"]
+[ext_resource type="Resource" uid="uid://cl3usd8ltkiex" path="res://scripts/resources/levels/level_06.tres" id="8_t14sa"]
+[ext_resource type="Resource" uid="uid://d046n6ov8pd1t" path="res://scripts/resources/levels/level_07.tres" id="9_kkqwa"]
+[ext_resource type="Resource" uid="uid://bcplbmj4508r1" path="res://scripts/resources/levels/level_08.tres" id="10_y0ae4"]
+[ext_resource type="Resource" uid="uid://bokjmfskhq06u" path="res://scripts/resources/levels/level_09.tres" id="11_se6hr"]
+[ext_resource type="Resource" uid="uid://bxbrq55b4coqf" path="res://scripts/resources/levels/level_10.tres" id="12_qjfr2"]
+[ext_resource type="Resource" uid="uid://bdo43dld0amvf" path="res://scripts/resources/levels/level_11_dragon.tres" id="13_gk1yv"]
+[ext_resource type="StyleBox" uid="uid://drpiv12wm13t8" path="res://theme/stylebox_level_circle_unlocked.tres" id="14_vyj17"]
+[ext_resource type="StyleBox" uid="uid://b4q0memi4n45x" path="res://theme/stylebox_level_circle_locked.tres" id="15_t14sa"]
+[ext_resource type="StyleBox" uid="uid://c1505pw4xxcy0" path="res://theme/stylebox_level_circle_hover.tres" id="16_t14sa"]
 
 [node name="MainMenu" type="Control" unique_id=1027720489]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_s4xhi")
-levels = Array[ExtResource("2_my85g")]([ExtResource("3_kad7n"), ExtResource("4_yoys1"), ExtResource("5_gk1yv"), ExtResource("6_1fovh"), ExtResource("7_vyj17"), ExtResource("8_t14sa"), ExtResource("9_kkqwa"), ExtResource("10_y0ae4"), ExtResource("11_se6hr"), ExtResource("12_qjfr2")])
+levels = Array[ExtResource("2_my85g")]([ExtResource("3_kad7n"), ExtResource("4_yoys1"), ExtResource("5_gk1yv"), ExtResource("6_1fovh"), ExtResource("7_vyj17"), ExtResource("8_t14sa"), ExtResource("9_kkqwa"), ExtResource("10_y0ae4"), ExtResource("11_se6hr"), ExtResource("12_qjfr2"), ExtResource("13_gk1yv")])
+level_circle_unlocked = ExtResource("14_vyj17")
+level_circle_locked = ExtResource("15_t14sa")
+level_circle_hover = ExtResource("16_t14sa")
+
+[node name="Background" type="Panel" parent="." unique_id=1499730711]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1540155723]
 layout_mode = 0
