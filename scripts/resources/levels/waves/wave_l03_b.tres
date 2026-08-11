@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WaveResource" format=3]
 
 [ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="1_script"]
-[ext_resource type="Resource" uid="uid://j8ijww5i3oik" path="res://scripts/resources/enemies/enemy_melee_elite.tres" id="2_elite"]
+[ext_resource type="Resource" uid="uid://j8ijww5i3oik" path="res://scripts/resources/enemies/enemy_melee_veteran.tres" id="2_elite"]
 
 [resource]
 script = ExtResource("1_script")

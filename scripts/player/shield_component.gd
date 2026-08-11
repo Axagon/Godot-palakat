@@ -7,6 +7,9 @@ class_name ShieldComponent
 
 signal shield_changed(current_shield: float, max_shield: float)
 
+@export var item_name: String = ""
+@export var icon: Texture2D = null
+
 @export var max_shield: float = 0.0
 @export var regen_per_second: float = 0.0
 

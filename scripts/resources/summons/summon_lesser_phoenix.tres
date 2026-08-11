@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_goxgt"]
 [ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="1_ipbk7"]
+[ext_resource type="Resource" uid="uid://1m88ga75jc0" path="res://scripts/resources/summons/summon_upgrade_curve_default.tres" id="3_bxunq"]
 
 [resource]
 script = ExtResource("1_goxgt")
@@ -14,4 +15,5 @@ move_speed = 55.0
 attack_damage = 5
 attack_range = 180.0
 attack_cooldown = 1.5
+upgrade_curve = ExtResource("3_bxunq")
 metadata/_custom_type_script = "uid://ch6bw48writhf"

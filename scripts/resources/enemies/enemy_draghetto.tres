@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://c6v7einqscvhy"]
+
+[ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_4uwyf"]
+[ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="1_whss0"]
+[ext_resource type="SpriteFrames" uid="uid://buc3ocev7mh6a" path="res://sprites/enemies/archer/enemy_archer_sprite_frames.tres" id="3_8h178"]
+
+[resource]
+script = ExtResource("1_4uwyf")
+enemy_name = "Draghetto"
+tint_color = Color(0.9309246, 0.6651851, 0.95468724, 1)
+sprite_frames = ExtResource("3_8h178")
+category = 2
+attack_projectile_scene = ExtResource("1_whss0")
+max_health = 20
+move_speed = 90.0
+is_flying = true
+attack_damage = 6
+attack_range = 220.0
+attack_cooldown = 1.6
+gold_reward = 3
+applies_elemental_effects = true
+fire_resistance_percent = 0.5
+metadata/_custom_type_script = "uid://bsxpxs45grctb"

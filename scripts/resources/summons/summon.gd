@@ -15,10 +15,11 @@ func _ready() -> void:
 	if counts_toward_summon_cap:
 		add_to_group("active_summons")
 	super._ready()
+	var final_stats: Dictionary = _compute_final_stats()
 	setup(
-		summon_resource.max_health,
-		summon_resource.move_speed,
-		summon_resource.attack_damage,
+		final_stats.max_health,
+		final_stats.move_speed,
+		final_stats.attack_damage,
 		summon_resource.attack_cooldown,
 		summon_resource.attack_range,
 		summon_resource.category,
@@ -26,6 +27,28 @@ func _ready() -> void:
 		summon_resource.target_priority,
 		summon_resource.element,
 		true)
+
+
+# Applica i moltiplicatori di potenziamento (HP/danno/velocita') acquistati
+# per questa specifica risorsa evocazione posseduta. Nessuna modifica a
+# range/cooldown, stesso principio gia' applicato al Rango nemici.
+func _compute_final_stats() -> Dictionary:
+	var level: int = GameState.get_upgrade_level(summon_resource)
+	# invariato da qui in poi — get_health_multiplier() ecc. restano sulla
+	# sottoclasse specifica, non sulla base
+	var curve: SummonUpgradeCurveResource = summon_resource.upgrade_curve
+	var hp_mult: float = 1.0
+	var damage_mult: float = 1.0
+	var speed_mult: float = 1.0
+	if curve != null:
+		hp_mult = curve.get_health_multiplier(level)
+		damage_mult = curve.get_damage_multiplier(level)
+		speed_mult = curve.get_speed_multiplier(level)
+	return {
+		"max_health": int(round(summon_resource.max_health * hp_mult)),
+		"move_speed": summon_resource.move_speed * speed_mult,
+		"attack_damage": int(round(summon_resource.attack_damage * damage_mult)),
+	}
 
 
 func _process(delta: float) -> void:
@@ -46,3 +69,4 @@ func _update_nature_regen(delta: float) -> void:
 		var whole: int = int(_regen_accumulator)
 		_regen_accumulator -= whole
 		health_component.heal(whole)
+		

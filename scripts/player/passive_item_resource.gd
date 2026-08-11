@@ -5,7 +5,10 @@ class_name PassiveItemResource
 # Bonus fissi sommati direttamente ai valori base, bonus percentuali
 # applicati come moltiplicatore. Nessuna logica qui, solo statistiche.
 
+enum UpgradeStat { MAX_HEALTH, MAX_MANA, MANA_REGEN, MAX_FOOD, FOOD_REGEN, MOVE_SPEED, SPELL_DAMAGE, SHIELD_REGEN }
+
 @export var item_name: String = ""
+@export var icon: Texture2D = null
 
 @export var max_health_flat: int = 0
 @export var max_mana_flat: float = 0.0
@@ -18,3 +21,6 @@ class_name PassiveItemResource
 @export var shield_regen_percent: float = 0.0
 
 @export var max_summons_bonus: int = 0
+
+@export var upgrade_curve: UpgradeCurveResource = null
+@export var upgrade_target_stat: UpgradeStat = UpgradeStat.SPELL_DAMAGE

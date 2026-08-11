@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ExplodingEnemyResource" format=3 uid="uid://colm7145bny0y"]
+
+[ext_resource type="Script" uid="uid://byepp4tromobm" path="res://scripts/resources/enemies/exploding_enemy_resource.gd" id="1_bmbyc"]
+
+[resource]
+script = ExtResource("1_bmbyc")
+explosion_damage = 6
+explosion_radius = 90.0
+enemy_name = "Imp di Magma"
+tint_color = Color(0.95468724, 0.58383155, 0.42358288, 1)
+max_health = 8
+move_speed = 130.0
+attack_damage = 2
+attack_cooldown = 0.7
+metadata/_custom_type_script = "uid://byepp4tromobm"

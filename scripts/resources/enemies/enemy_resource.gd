@@ -12,7 +12,14 @@ class_name EnemyResource
 
 @export var max_health: int = 10
 @export var move_speed: float = 80.0
+@export var is_flying: bool = false
 
 @export var attack_damage: int = 1
 @export var attack_range: float = 40.0
 @export var attack_cooldown: float = 1.0
+
+@export var gold_reward: int = 1
+
+@export var element: SpellResource.Element = SpellResource.Element.FIRE
+@export var applies_elemental_effects: bool = false
+@export var fire_resistance_percent: float = 0.0

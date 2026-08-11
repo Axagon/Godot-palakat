@@ -1,0 +1,45 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/upgrade/upgrade_row_ui.gd" id="1_row"]
+
+[node name="UpgradeRowUi" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_row")
+
+[node name="IconTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 4
+stretch_mode = 5
+
+[node name="InfoContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="NameLabel" type="Label" parent="InfoContainer"]
+layout_mode = 2
+text = "Nome oggetto"
+
+[node name="LevelLabel" type="Label" parent="InfoContainer"]
+layout_mode = 2
+text = "Livello 0/5"
+
+[node name="StatsContainer" type="VBoxContainer" parent="InfoContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(160, 0)
+size_flags_vertical = 4
+vertical_alignment = 1
+text = "Costo: 0 Lische d'Oro"
+
+[node name="UpgradeButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Potenzia"

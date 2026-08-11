@@ -11,3 +11,8 @@ class_name ProgressionConfig
 @export var summon_unlock_queue: Array[SummonResource] = []
 @export var summon_unlock_first_level: int = 5
 @export var summon_unlock_interval: int = 10
+
+@export var level_complete_base_gold: int = 20
+@export var level_complete_bonus_per_heart: int = 10
+
+@export var defeat_gold_fraction: float = 0.4

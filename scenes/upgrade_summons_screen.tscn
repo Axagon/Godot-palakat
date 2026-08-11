@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dmd7t4siic1g1"]
+
+[ext_resource type="Script" uid="uid://be62vyo3wmylm" path="res://scripts/ui/upgrade/upgrade_summons_screen.gd" id="1_sum"]
+[ext_resource type="PackedScene" uid="uid://dlpwlyys2mabn" path="res://scripts/ui/upgrade/upgrade_row_ui.tscn" id="2_1ixwp"]
+
+[node name="UpgradeSummonsScreen" type="Control" unique_id=642373203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sum")
+row_scene = ExtResource("2_1ixwp")
+
+[node name="Background" type="Panel" parent="." unique_id=1904613206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1461555319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1032145281]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1577505055]
+layout_mode = 2
+text = "Potenzia Evocazioni"
+
+[node name="RowsScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=2087559981]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RowsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RowsScroll" unique_id=564966355]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1907707176]
+layout_mode = 2
+text = "Indietro"

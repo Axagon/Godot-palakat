@@ -12,3 +12,10 @@ class_name WaveResource
 @export var spawn_interval: float = 2.0
 @export var start_time: float = 0.0
 @export var enemy_scene_override: PackedScene = null
+
+# Probabilita' indipendente (0.0-1.0) che un singolo spawn di questa wave sia
+# Elite o Super Elite. Estrazione fatta dal LevelManager al momento dello
+# spawn, non qui: la risorsa resta dato puro. Super Elite ha priorita' se
+# entrambi i tiri hanno successo (vedi LevelManager._roll_rank()).
+@export_range(0.0, 1.0) var elite_chance: float = 0.0
+@export_range(0.0, 1.0) var super_elite_chance: float = 0.0

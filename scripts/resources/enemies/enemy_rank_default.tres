@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyRankResource" format=3 uid="uid://snd2e03wwj2s"]
+
+[ext_resource type="Script" uid="uid://c2rrih0g6mhv7" path="res://scripts/resources/enemies/enemy_rank_resource.gd" id="1_1178i"]
+
+[resource]
+script = ExtResource("1_1178i")
+elite_tint = Color(0.7977378, 0.7977378, 0.7977378, 1)
+metadata/_custom_type_script = "uid://c2rrih0g6mhv7"

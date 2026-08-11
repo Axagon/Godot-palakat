@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="1_script"]
 [ext_resource type="Resource" uid="uid://dhwvhhgleuy46" path="res://scripts/resources/enemies/enemy_shade.tres" id="2_shade"]
-[ext_resource type="Resource" uid="uid://j8ijww5i3oik" path="res://scripts/resources/enemies/enemy_melee_elite.tres" id="3_elite"]
+[ext_resource type="Resource" uid="uid://j8ijww5i3oik" path="res://scripts/resources/enemies/enemy_melee_veteran.tres" id="3_elite"]
 
 [resource]
 script = ExtResource("1_script")

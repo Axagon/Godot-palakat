@@ -12,10 +12,19 @@
 [ext_resource type="Resource" uid="uid://bcplbmj4508r1" path="res://scripts/resources/levels/level_08.tres" id="10_y0ae4"]
 [ext_resource type="Resource" uid="uid://bokjmfskhq06u" path="res://scripts/resources/levels/level_09.tres" id="11_se6hr"]
 [ext_resource type="Resource" uid="uid://bxbrq55b4coqf" path="res://scripts/resources/levels/level_10.tres" id="12_qjfr2"]
-[ext_resource type="Resource" uid="uid://bdo43dld0amvf" path="res://scripts/resources/levels/level_11_dragon.tres" id="13_gk1yv"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_11.tres" id="13_fw30w"]
 [ext_resource type="StyleBox" uid="uid://drpiv12wm13t8" path="res://theme/stylebox_level_circle_unlocked.tres" id="14_vyj17"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_12.tres" id="14_w7ltv"]
 [ext_resource type="StyleBox" uid="uid://b4q0memi4n45x" path="res://theme/stylebox_level_circle_locked.tres" id="15_t14sa"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_13.tres" id="15_wqgtn"]
 [ext_resource type="StyleBox" uid="uid://c1505pw4xxcy0" path="res://theme/stylebox_level_circle_hover.tres" id="16_t14sa"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_14.tres" id="16_w3goq"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_15.tres" id="17_51vlb"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_16.tres" id="18_lyhi2"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_17.tres" id="19_nvawj"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_18.tres" id="20_y1h1r"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_19.tres" id="21_sutdi"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/level_20.tres" id="22_58nw7"]
 
 [node name="MainMenu" type="Control" unique_id=1027720489]
 layout_mode = 3
@@ -25,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s4xhi")
-levels = Array[ExtResource("2_my85g")]([ExtResource("3_kad7n"), ExtResource("4_yoys1"), ExtResource("5_gk1yv"), ExtResource("6_1fovh"), ExtResource("7_vyj17"), ExtResource("8_t14sa"), ExtResource("9_kkqwa"), ExtResource("10_y0ae4"), ExtResource("11_se6hr"), ExtResource("12_qjfr2"), ExtResource("13_gk1yv")])
+levels = Array[ExtResource("2_my85g")]([ExtResource("3_kad7n"), ExtResource("4_yoys1"), ExtResource("5_gk1yv"), ExtResource("6_1fovh"), ExtResource("7_vyj17"), ExtResource("8_t14sa"), ExtResource("9_kkqwa"), ExtResource("10_y0ae4"), ExtResource("11_se6hr"), ExtResource("12_qjfr2"), ExtResource("13_fw30w"), ExtResource("14_w7ltv"), ExtResource("15_wqgtn"), ExtResource("16_w3goq"), ExtResource("17_51vlb"), ExtResource("18_lyhi2"), ExtResource("19_nvawj"), ExtResource("20_y1h1r"), ExtResource("21_sutdi"), ExtResource("22_58nw7")])
 level_circle_unlocked = ExtResource("14_vyj17")
 level_circle_locked = ExtResource("15_t14sa")
 level_circle_hover = ExtResource("16_t14sa")
@@ -49,6 +58,17 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=121849136]
 layout_mode = 2
 text = "PalaKat: Sir Whiskers's Chronicles"
+
+[node name="GoldLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=767172161]
+layout_mode = 2
+
+[node name="UpgradeEquipmentButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=538866175]
+layout_mode = 2
+text = "Potenzia Equipaggiamento"
+
+[node name="UpgradeSummonsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1001903898]
+layout_mode = 2
+text = "Potenzia Evocazioni"
 
 [node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=460382566]
 layout_mode = 2

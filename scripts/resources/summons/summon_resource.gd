@@ -22,3 +22,5 @@ class_name SummonResource
 @export var attack_cooldown: float = 1.0
 
 @export var regen_per_second: float = 0.0
+
+@export var upgrade_curve: SummonUpgradeCurveResource = null

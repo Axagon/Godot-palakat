@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cgdjsmx1ndbks"]
+
+[ext_resource type="Script" uid="uid://byepp4tromobm" path="res://scripts/resources/enemies/exploding_enemy_resource.gd" id="1_fygt7"]
+[ext_resource type="SpriteFrames" uid="uid://c6yu8hh1t27dm" path="res://sprites/enemies/melee/enemy_melee_sprite_frames.tres" id="3_6fnqq"]
+[ext_resource type="Script" uid="uid://ds43mbo8lmm5v" path="res://scripts/player/health_component.gd" id="4_pghmw"]
+[ext_resource type="Script" uid="uid://b5my13f3c64e6" path="res://scripts/combat/health_bar.gd" id="5_qo0na"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5c6a"]
+size = Vector2(50, 67)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvnpn"]
+radius = 40.0
+
+[node name="ExplodingEnemy" type="CharacterBody2D" unique_id=1259571111]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_fygt7")
+metadata/_custom_type_script = "uid://pno4n8rkmsgi"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1425121102]
+position = Vector2(3, -35)
+sprite_frames = ExtResource("3_6fnqq")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1495933774]
+position = Vector2(0.25, -4.5)
+shape = SubResource("RectangleShape2D_m5c6a")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=565937075]
+script = ExtResource("4_pghmw")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1051888401]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1474342794]
+shape = SubResource("CircleShape2D_uvnpn")
+
+[node name="HealthBar" type="Node2D" parent="." unique_id=1037319944]
+position = Vector2(-20, -45)
+script = ExtResource("5_qo0na")
+
+[node name="Background" type="ColorRect" parent="HealthBar" unique_id=529706082]
+offset_right = 40.0
+offset_bottom = 6.0
+color = Color(0.45424774, 0.45424774, 0.45424774, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar" unique_id=1766450914]
+offset_right = 40.0
+offset_bottom = 6.0
+color = Color(1.2931612, 0.2836376, 0.2836376, 1)

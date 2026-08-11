@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UpgradeCurveResource" format=3 uid="uid://c7q0vf6gp1m6c"]
+
+[ext_resource type="Script" uid="uid://eh4ssx6ncqvx" path="res://scripts/resources/upgrade_curve_resource.gd" id="1_kp4xd"]
+
+[resource]
+script = ExtResource("1_kp4xd")
+gold_cost_per_level = Array[int]([30, 60, 100, 150, 220])
+stat_multiplier_per_level = Array[float]([1.06, 1.13, 1.2, 1.28, 1.37])
+metadata/_custom_type_script = "uid://eh4ssx6ncqvx"

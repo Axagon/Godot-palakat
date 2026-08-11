@@ -3,17 +3,26 @@ class_name MainMenu
 
 const LEVEL_NUMBERS_TEXTURE := preload("res://sprites/ui/numbers_levels.png")
 const LEVEL_NUMBER_REGIONS := [
-	Rect2(14, 7, 6, 9),    # 1
-	Rect2(46, 7, 6, 9),    # 2
-	Rect2(78, 7, 6, 9),    # 3
-	Rect2(109, 7, 6, 9),   # 4
-	Rect2(142, 7, 6, 9),   # 5
-	Rect2(174, 7, 6, 9),   # 6
-	Rect2(206, 7, 6, 9),   # 7
-	Rect2(238, 7, 6, 9),   # 8
-	Rect2(270, 7, 6, 9),   # 9
-	Rect2(11, 23, 11, 9),  # 10
-	Rect2(43, 23, 11, 9),  # 11
+	Rect2(14, 7, 6, 9),     # 1
+	Rect2(46, 7, 6, 9),     # 2
+	Rect2(78, 7, 6, 9),     # 3
+	Rect2(109, 7, 6, 9),    # 4
+	Rect2(142, 7, 6, 9),    # 5
+	Rect2(174, 7, 6, 9),    # 6
+	Rect2(206, 7, 6, 9),    # 7
+	Rect2(238, 7, 6, 9),    # 8
+	Rect2(270, 7, 6, 9),    # 9
+	Rect2(11, 23, 11, 9),   # 10
+	Rect2(43, 23, 11, 9),   # 11
+	Rect2(75, 23, 11, 9),   # 12
+	Rect2(107, 23, 11, 9),  # 13
+	Rect2(139, 23, 11, 9),  # 14
+	Rect2(171, 23, 11, 9),  # 15
+	Rect2(203, 23, 11, 9),  # 16
+	Rect2(235, 23, 11, 9),  # 17
+	Rect2(267, 23, 11, 9),  # 18
+	Rect2(299, 23, 11, 9),  # 19
+	Rect2(331, 23, 11, 9),  # 20
 ]
 
 @export var levels: Array[LevelResource] = []
@@ -24,11 +33,20 @@ const LEVEL_NUMBER_REGIONS := [
 
 
 @onready var level_grid: GridContainer = $MarginContainer/VBoxContainer/LevelGrid
+@onready var gold_label: Label = $MarginContainer/VBoxContainer/GoldLabel
+
+
+@onready var upgrade_equipment_button: Button = $MarginContainer/VBoxContainer/UpgradeEquipmentButton
+@onready var upgrade_summons_button: Button = $MarginContainer/VBoxContainer/UpgradeSummonsButton
 
 
 func _ready() -> void:
 	GameState.all_levels = levels
 	_build_level_buttons()
+	_update_gold_label(GameState.get_gold())
+	GameState.gold_changed.connect(_update_gold_label)
+	upgrade_equipment_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/upgrade_equipment_screen.tscn"))
+	upgrade_summons_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/upgrade_summons_screen.tscn"))
 
 
 func _build_level_buttons() -> void:
@@ -81,3 +99,7 @@ func _on_level_selected(index: int) -> void:
 		return
 	GameState.selected_level = levels[index]
 	get_tree().change_scene_to_file("res://scenes/loadout_screen.tscn")
+
+
+func _update_gold_label(current_gold: int) -> void:
+	gold_label.text = "Lische d'Oro: %d" % current_gold

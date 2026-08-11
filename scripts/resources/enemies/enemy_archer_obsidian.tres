@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://d0w1ew6k4lg2x"]
+
+[ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_sfudl"]
+[ext_resource type="PackedScene" uid="uid://bawh0ce76cyc4" path="res://scenes/projectiles.tscn" id="1_w7de3"]
+[ext_resource type="SpriteFrames" uid="uid://buc3ocev7mh6a" path="res://sprites/enemies/archer/enemy_archer_sprite_frames.tres" id="3_jkwu4"]
+
+[resource]
+script = ExtResource("1_sfudl")
+enemy_name = "Arciere d'ossidiana"
+tint_color = Color(0.8808251, 0.6262097, 0.58383155, 1)
+sprite_frames = ExtResource("3_jkwu4")
+category = 2
+attack_projectile_scene = ExtResource("1_w7de3")
+max_health = 18
+move_speed = 70.0
+attack_damage = 5
+attack_range = 200.0
+attack_cooldown = 1.8
+gold_reward = 2
+applies_elemental_effects = true
+metadata/_custom_type_script = "uid://bsxpxs45grctb"

@@ -1,3 +1,9 @@
+EnemyResource
+ExplodingEnemyResource
+SummonUpgradeCurveResource
+UpgradeCurveResource
+DifficultyScalingResource
+EnemyRankResource
 StyleBoxTexture
 AtlasTexture
 Theme
@@ -6,9 +12,3 @@ LevelResource
 DragonBossResource
 LabelSettings
 SummonResource
-ProgressionConfig
-BossResource
-CatalystResource
-ShieldResource
-PassiveItemResource
-SpellSlotScalingResource

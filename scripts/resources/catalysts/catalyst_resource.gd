@@ -12,3 +12,5 @@ class_name CatalystResource
 @export var base_mana_cost: int = 10
 @export var base_cooldown: float = 1.5
 @export var base_range: float = 1000.0
+
+@export var upgrade_curve: UpgradeCurveResource = null

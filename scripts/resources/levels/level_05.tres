@@ -10,5 +10,5 @@ script = ExtResource("1_lvl")
 level_number = 5
 level_name = "Livello 5"
 waves = Array[ExtResource("2_wave")]([ExtResource("3_a"), ExtResource("4_b")])
-level_index_in_world = 5
+display_level_in_world = 5
 metadata/_custom_type_script = "uid://cygrejrg4iqqf"

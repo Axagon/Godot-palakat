@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameState="*uid://c67moly7s3k0f"
 ObjectPool="*uid://cth3v7miabqdx"
+RunStats="*uid://dxj6qri7sndiq"
 
 [display]
 

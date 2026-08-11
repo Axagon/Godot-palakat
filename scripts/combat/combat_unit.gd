@@ -21,6 +21,7 @@ var _attack_timer: float = 0.0
 var _target: Node2D = null
 var _bodies_in_range: Array[Node2D] = []
 var _target_priority: Array[CombatUnit.Category] = []
+var _can_target_flying: bool = true
 
 var _move_speed: float = 0.0
 var _attack_damage: int = 0
@@ -46,6 +47,9 @@ const ANIMATION_SCALE_CORRECTIONS: Dictionary = {
 	"hurt": 1.2,
 	"dead": 1.2,
 }
+
+const FLYING_CAPABLE_CATEGORIES: Array[Category] = [Category.RANGED, Category.SUPPORT]
+
 
 func _ready() -> void:
 	health_component.died.connect(_on_died)
@@ -123,10 +127,16 @@ func _physics_process(delta: float) -> void:
 			_process_attack(delta)
 
 
+func _can_target(body: Node2D) -> bool:
+	if not body.is_in_group(target_group):
+		return false
+	if body is Enemy and body.enemy_resource != null and body.enemy_resource.is_flying:
+		return category in FLYING_CAPABLE_CATEGORIES
+	return true
+
+
 func _process_attack(delta: float) -> void:
-	_bodies_in_range = attack_area.get_overlapping_bodies().filter(
-		func(b): return b.is_in_group(target_group)
-	)
+	_bodies_in_range = attack_area.get_overlapping_bodies().filter(_can_target)
 	if _bodies_in_range.is_empty():
 		_target = null
 		_state = UnitState.MOVING
@@ -146,7 +156,10 @@ func _perform_attack() -> void:
 		_fire_projectile()
 	elif _target.has_method("apply_damage"):
 		var final_damage: int = int(round(_attack_damage * damage_buff_multiplier))
-		_target.apply_damage(final_damage)
+		if _applies_elemental_effects and _target.has_method("apply_elemental_damage"):
+			_target.apply_elemental_damage(final_damage, _element)
+		else:
+			_target.apply_damage(final_damage)
 		_try_apply_burn(_target, final_damage)
 
 
@@ -195,9 +208,28 @@ func apply_heal(amount: int) -> void:
 	health_component.heal(amount)
 
 
-func apply_burn(total_damage: int, duration: float) -> void:
-	health_component.apply_burn(total_damage, duration)
+func apply_elemental_damage(amount: int, source_element: SpellResource.Element) -> void:
+	var final_amount: int = _apply_fire_resistance(amount, source_element)
+	health_component.take_damage(final_amount)
 
+
+func apply_burn(total_damage: int, duration: float, source_element: SpellResource.Element = SpellResource.Element.FIRE) -> void:
+	var final_damage: int = _apply_fire_resistance(total_damage, source_element)
+	health_component.apply_burn(final_damage, duration)
+
+
+var _fire_resistance_percent: float = 0.0
+
+
+func set_fire_resistance(percent: float) -> void:
+	_fire_resistance_percent = percent
+
+
+func _apply_fire_resistance(amount: int, source_element: SpellResource.Element) -> int:
+	if source_element != SpellResource.Element.FIRE or _fire_resistance_percent <= 0.0:
+		return amount
+	return int(round(amount * (1.0 - _fire_resistance_percent)))
+		
 
 func apply_damage_buff(multiplier: float, duration: float) -> void:
 	damage_buff_multiplier = multiplier
@@ -205,7 +237,7 @@ func apply_damage_buff(multiplier: float, duration: float) -> void:
 
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
-	if not body.is_in_group(target_group):
+	if not _can_target(body):
 		return
 	_bodies_in_range.append(body)
 	_choose_target()

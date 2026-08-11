@@ -64,21 +64,21 @@ func _apply_passive_item() -> void:
 	if passive_item == null:
 		return
 
-	_health_component.max_health += passive_item.max_health_flat
+	_health_component.max_health += int(round(_passive_stat(PassiveItemResource.UpgradeStat.MAX_HEALTH, passive_item.max_health_flat)))
 	_health_component.current_health = _health_component.max_health
 
-	_mana_component.max_mana += passive_item.max_mana_flat
-	_mana_component.regen_per_second += passive_item.mana_regen_flat
+	_mana_component.max_mana += _passive_stat(PassiveItemResource.UpgradeStat.MAX_MANA, passive_item.max_mana_flat)
+	_mana_component.regen_per_second += _passive_stat(PassiveItemResource.UpgradeStat.MANA_REGEN, passive_item.mana_regen_flat)
 	_mana_component.current_mana = _mana_component.max_mana
 
-	_food_component.max_food += passive_item.max_food_flat
-	_food_component.regen_per_second += passive_item.food_regen_flat
+	_food_component.max_food += _passive_stat(PassiveItemResource.UpgradeStat.MAX_FOOD, passive_item.max_food_flat)
+	_food_component.regen_per_second += _passive_stat(PassiveItemResource.UpgradeStat.FOOD_REGEN, passive_item.food_regen_flat)
 	_food_component.current_food = _food_component.max_food
 
-	_player.move_speed *= (1.0 + passive_item.move_speed_percent)
+	_player.move_speed *= (1.0 + _passive_stat(PassiveItemResource.UpgradeStat.MOVE_SPEED, passive_item.move_speed_percent))
 
-	spell_damage_percent = passive_item.spell_damage_percent
-	
+	spell_damage_percent = _passive_stat(PassiveItemResource.UpgradeStat.SPELL_DAMAGE, passive_item.spell_damage_percent)
+
 
 func _apply_shield_item() -> void:
 	if shield_item == null:
@@ -86,10 +86,10 @@ func _apply_shield_item() -> void:
 
 	var regen_bonus_mult: float = 1.0
 	if passive_item != null:
-		regen_bonus_mult += passive_item.shield_regen_percent
+		regen_bonus_mult += _passive_stat(PassiveItemResource.UpgradeStat.SHIELD_REGEN, passive_item.shield_regen_percent)
 
-	_shield_component.max_shield += shield_item.max_shield
-	_shield_component.regen_per_second += shield_item.shield_regen_per_second * regen_bonus_mult
+	_shield_component.max_shield += _shield_stat(ShieldResource.UpgradeStat.MAX_SHIELD, shield_item.max_shield)
+	_shield_component.regen_per_second += _shield_stat(ShieldResource.UpgradeStat.REGEN, shield_item.shield_regen_per_second) * regen_bonus_mult
 	_shield_component.current_shield = _shield_component.max_shield
 
 
@@ -114,15 +114,29 @@ func _build_spell(catalyst: CatalystResource, slot: SpellResource.SpellSlot) -> 
 			mana_mult = slot_scaling.ultimate_mana_mult
 			cooldown_mult = slot_scaling.ultimate_cooldown_mult
 
+	var upgrade_mult: float = GameState.get_upgrade_multiplier(catalyst, catalyst.upgrade_curve)
+
 	var spell: SpellResource = SpellResource.new()
 	spell.spell_name = catalyst.catalyst_name
 	spell.slot = slot
 	spell.element = catalyst.element
 	spell.spell_type = catalyst.spell_type
-	spell.damage = int(round(catalyst.base_damage * damage_mult))
-	spell.heal_amount = int(round(catalyst.base_heal_amount * damage_mult))
-	spell.shield_amount = catalyst.base_shield_amount * damage_mult
+	spell.damage = int(round(catalyst.base_damage * damage_mult * upgrade_mult))
+	spell.heal_amount = int(round(catalyst.base_heal_amount * damage_mult * upgrade_mult))
+	spell.shield_amount = catalyst.base_shield_amount * damage_mult * upgrade_mult
 	spell.mana_cost = int(round(catalyst.base_mana_cost * mana_mult))
 	spell.cooldown = catalyst.base_cooldown * cooldown_mult
 	spell.spell_range = catalyst.base_range
 	return spell
+
+
+func _passive_stat(stat: PassiveItemResource.UpgradeStat, base_value: float) -> float:
+	if passive_item.upgrade_target_stat != stat:
+		return base_value
+	return base_value * GameState.get_upgrade_multiplier(passive_item, passive_item.upgrade_curve)
+
+
+func _shield_stat(stat: ShieldResource.UpgradeStat, base_value: float) -> float:
+	if shield_item.upgrade_target_stat != stat:
+		return base_value
+	return base_value * GameState.get_upgrade_multiplier(shield_item, shield_item.upgrade_curve)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WaveResource" format=3]
+
+[ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="1_script"]
+[ext_resource type="Resource" path="res://scripts/resources/enemies/enemy_melee_magma.tres" id="2_magma"]
+[ext_resource type="Resource" path="res://scripts/resources/enemies/enemy_archer_obsidian.tres" id="3_obsidian"]
+[ext_resource type="Resource" path="res://scripts/resources/enemies/enemy_brute_ashen.tres" id="4_ashen"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_pool = Array[Resource]([ExtResource("2_magma"), ExtResource("3_obsidian"), ExtResource("4_ashen")])
+enemy_count = 4
+spawn_interval = 1.4
+start_time = 18.0
+metadata/_custom_type_script = "uid://b1cah80f4bxhi"

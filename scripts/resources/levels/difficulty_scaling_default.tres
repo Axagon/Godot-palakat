@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DifficultyScalingResource" format=3 uid="uid://brbuoqrnnwkba"]
+
+[ext_resource type="Script" uid="uid://b0qdcl6hj8l30" path="res://scripts/resources/levels/difficulty_scaling_resource.gd" id="1_vo3jj"]
+
+[resource]
+script = ExtResource("1_vo3jj")
+metadata/_custom_type_script = "uid://b0qdcl6hj8l30"

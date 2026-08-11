@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WaveResource" format=3 uid="uid://cs14tigjk67p7"]
+[gd_resource type="Resource" script_class="WaveResource" format=3]
 
 [ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_njfhx"]
 [ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="2_cg05p"]

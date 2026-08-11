@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://2lg5kmpmde78" path="res://scenes/hud.tscn" id="5_7gix3"]
 [ext_resource type="PackedScene" uid="uid://bax74gf3h2y8w" path="res://scenes/outpost.tscn" id="7_88ety"]
 [ext_resource type="PackedScene" uid="uid://bvgs1qwti2q2m" path="res://scenes/level_boundary.tscn" id="7_ahbqi"]
+[ext_resource type="Resource" uid="uid://snd2e03wwj2s" path="res://scripts/resources/enemies/enemy_rank_default.tres" id="7_dw7u0"]
+[ext_resource type="Resource" uid="uid://brbuoqrnnwkba" path="res://scripts/resources/levels/difficulty_scaling_default.tres" id="8_fyxdr"]
 [ext_resource type="Texture2D" uid="uid://cwmps2r6a8a86" path="res://sprites/backgroundForest.png" id="9_7gix3"]
 [ext_resource type="PackedScene" uid="uid://dle0ig4rbdewy" path="res://scenes/game_overlay.tscn" id="10_4asn1"]
 
@@ -44,6 +46,8 @@ position = Vector2(3700, 300)
 script = ExtResource("2_tmr53")
 level = ExtResource("3_qcd3b")
 enemy_scene = ExtResource("3_88ety")
+rank_config = ExtResource("7_dw7u0")
+difficulty_config = ExtResource("8_fyxdr")
 
 [node name="SummonSpawnPoint" type="Marker2D" parent="." unique_id=1341383027 groups=["summon_spawn_point"]]
 position = Vector2(90, 300)

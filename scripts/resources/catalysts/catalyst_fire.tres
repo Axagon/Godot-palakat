@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dkfckoccx1m2o" path="res://sprites/catalysts/catalyst_fire.png" id="1_sp2t7"]
 [ext_resource type="Script" uid="uid://dhqxiy4kqwgod" path="res://scripts/resources/catalysts/catalyst_resource.gd" id="1_vkly8"]
+[ext_resource type="Resource" uid="uid://c7q0vf6gp1m6c" path="res://scripts/resources/upgrade_curve_catalyst_default.tres" id="3_nog7a"]
 
 [resource]
 script = ExtResource("1_vkly8")
@@ -10,4 +11,5 @@ icon = ExtResource("1_sp2t7")
 base_damage = 8
 base_mana_cost = 8
 base_cooldown = 1.0
+upgrade_curve = ExtResource("3_nog7a")
 metadata/_custom_type_script = "uid://dhqxiy4kqwgod"

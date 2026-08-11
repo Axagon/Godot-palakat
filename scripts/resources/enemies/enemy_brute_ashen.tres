@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://unvo3bpxd01l"]
+
+[ext_resource type="Script" uid="uid://bsxpxs45grctb" path="res://scripts/resources/enemies/enemy_resource.gd" id="1_tqecr"]
+
+[resource]
+script = ExtResource("1_tqecr")
+enemy_name = "Calosso di cenere"
+tint_color = Color(0.7977378, 0.6651851, 0.6262097, 1)
+category = 0
+max_health = 70
+move_speed = 50.0
+attack_damage = 7
+attack_cooldown = 1.6
+gold_reward = 2
+fire_resistance_percent = 0.5
+metadata/_custom_type_script = "uid://bsxpxs45grctb"

@@ -38,10 +38,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("apply_damage"):
+	if applies_burn and body.has_method("apply_elemental_damage"):
+		body.apply_elemental_damage(damage, SpellResource.Element.FIRE)
+	elif body.has_method("apply_damage"):
 		body.apply_damage(damage)
 	if applies_burn and burn_damage > 0 and body.has_method("apply_burn"):
-		body.apply_burn(burn_damage, burn_duration)
+		body.apply_burn(burn_damage, burn_duration, SpellResource.Element.FIRE)
 	_return_to_pool()
 
 

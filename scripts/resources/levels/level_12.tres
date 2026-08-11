@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3]
+
+[ext_resource type="Script" uid="uid://cygrejrg4iqqf" path="res://scripts/resources/levels/level_resource.gd" id="1_lvl"]
+[ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="2_wave"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/waves/wave_l12_a.tres" id="3_a"]
+[ext_resource type="Resource" path="res://scripts/resources/levels/waves/wave_l12_b.tres" id="4_b"]
+
+[resource]
+script = ExtResource("1_lvl")
+level_number = 12
+level_name = "Livello 12"
+waves = Array[ExtResource("2_wave")]([ExtResource("3_a"), ExtResource("4_b")])
+world_number = 2
+level_index_in_world = 2
+metadata/_custom_type_script = "uid://cygrejrg4iqqf"

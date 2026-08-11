@@ -1,15 +1,12 @@
 extends CanvasLayer
 class_name GameOverlay
 
-# Gestisce le schermate di fine livello (sconfitta/vittoria) e la pausa
-# associata. Le stelle/cuori mostrati derivano direttamente dagli HP residui
-# del player nel momento dell'evento: 0 alla sconfitta (la morte scatta
-# proprio a 0 HP), fino al massimo se il livello viene vinto senza danni.
-
 @onready var game_over_panel: Control = $Control/GameOverPanel
 @onready var victory_panel: Control = $Control/VictoryPanel
 @onready var game_over_result_label: Label = $Control/GameOverPanel/ResultLabel
 @onready var victory_result_label: Label = $Control/VictoryPanel/ResultLabel
+@onready var game_over_reward_label: Label = $Control/GameOverPanel/RewardDetailLabel
+@onready var victory_reward_label: Label = $Control/VictoryPanel/RewardDetailLabel
 @onready var game_over_retry_button: Button = $Control/GameOverPanel/RetryButton
 @onready var victory_retry_button: Button = $Control/VictoryPanel/RetryButton
 @onready var victory_next_button: Button = $Control/VictoryPanel/NextButton
@@ -37,6 +34,9 @@ func _ready() -> void:
 func _on_player_died() -> void:
 	var max_hearts: int = _player_health_component.max_health
 	game_over_result_label.text = "0/%d" % max_hearts
+	var progress_ratio: float = RunStats.get_progress_ratio()
+	var reward: int = GameState.award_defeat_gold(progress_ratio)
+	game_over_reward_label.text = _build_defeat_reward_text(reward)
 	_show_panel(game_over_panel)
 
 
@@ -46,7 +46,38 @@ func _on_level_completed() -> void:
 	var hearts_remaining: int = _player_health_component.current_health
 	var max_hearts: int = _player_health_component.max_health
 	victory_result_label.text = "%d/%d" % [hearts_remaining, max_hearts]
+	var current_level: LevelResource = GameState.selected_level
+	var completion_reward: int = 0
+	if current_level != null:
+		completion_reward = GameState.on_level_completed(current_level.level_number, hearts_remaining)
+	victory_reward_label.text = _build_victory_reward_text(completion_reward)
 	_show_panel(victory_panel)
+
+
+func _build_victory_reward_text(completion_reward: int) -> String:
+	var lines: Array[String] = []
+	lines.append("Nemici Normali sconfitti  x%d  = %d" % [RunStats.kills_normal, RunStats.gold_from_normal])
+	lines.append("Elite sconfitti  x%d  = %d" % [RunStats.kills_elite, RunStats.gold_from_elite])
+	lines.append("Super Elite sconfitti  x%d  = %d" % [RunStats.kills_super_elite, RunStats.gold_from_super_elite])
+	if RunStats.boss_defeated:
+		lines.append("Boss sconfitto  = %d" % RunStats.gold_from_boss)
+	elif RunStats.outpost_destroyed:
+		lines.append("Avamposto distrutto  = %d" % RunStats.gold_from_outpost)
+	lines.append("Bonus completamento  = %d" % completion_reward)
+	var total: int = RunStats.get_kills_gold_total() + RunStats.gold_from_boss + RunStats.gold_from_outpost + completion_reward
+	lines.append("Totale  = %d" % total)
+	return "\n".join(lines)
+
+
+func _build_defeat_reward_text(reward: int) -> String:
+	var lines: Array[String] = []
+	lines.append("Nemici Normali sconfitti  x%d  = %d" % [RunStats.kills_normal, RunStats.gold_from_normal])
+	lines.append("Elite sconfitti  x%d  = %d" % [RunStats.kills_elite, RunStats.gold_from_elite])
+	lines.append("Super Elite sconfitti  x%d  = %d" % [RunStats.kills_super_elite, RunStats.gold_from_super_elite])
+	lines.append("Bonus progressi  = %d" % reward)
+	var total: int = RunStats.get_kills_gold_total() + reward
+	lines.append("Totale  = %d" % total)
+	return "\n".join(lines)
 
 
 func _show_panel(panel: Control) -> void:
@@ -72,3 +103,4 @@ func _on_next_pressed() -> void:
 			get_tree().change_scene_to_file("res://scenes/loadout_screen.tscn")
 			return
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	

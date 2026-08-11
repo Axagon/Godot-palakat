@@ -89,9 +89,11 @@ func _cast_offensive(spell: SpellResource, bonus_multiplier: float) -> void:
 	projectile.burn_damage = int(round(final_damage * CombatUnit.FIRE_BURN_DAMAGE_PERCENT)) if projectile.applies_burn else 0
 	projectile.burn_duration = CombatUnit.FIRE_BURN_DURATION
 	projectile.global_position = global_position
+	projectile.collision_layer = 0
+	projectile.collision_mask = 4
 	if projectile.get_parent() == null:
 		get_tree().current_scene.add_child(projectile)
-	projectile.set_direction(facing_direction)	
+	projectile.set_direction(facing_direction)
 
 
 func _on_card_played(card: SummonResource) -> void:

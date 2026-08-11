@@ -4,6 +4,8 @@ extends Node
 # disco. debug_unlock_everything permette di testare contenuto futuro senza
 # dover giocare la progressione reale ogni volta.
 
+signal gold_changed(current_gold: int)
+
 @export var progression_config: ProgressionConfig
 @export var debug_unlock_everything: bool = false
 
@@ -51,14 +53,6 @@ func get_owned_summons() -> Array[SummonResource]:
 	return save_data.owned_summons
 
 
-func on_level_completed(completed_level_number: int) -> void:
-	if completed_level_number + 1 > save_data.highest_level_unlocked:
-		save_data.highest_level_unlocked = completed_level_number + 1
-	_check_catalyst_unlock(completed_level_number)
-	_check_summon_unlock(completed_level_number)
-	save_game()
-
-
 func _check_catalyst_unlock(level_number: int) -> void:
 	var cfg := progression_config
 	if level_number < cfg.catalyst_unlock_first_level:
@@ -87,4 +81,82 @@ func _check_summon_unlock(level_number: int) -> void:
 		var unlocked: SummonResource = cfg.summon_unlock_queue[queue_index]
 		if not save_data.owned_summons.has(unlocked):
 			save_data.owned_summons.append(unlocked)
-			
+
+
+func add_gold(amount: int) -> void:
+	if amount <= 0:
+		return
+	save_data.gold += amount
+	save_game()
+	gold_changed.emit(save_data.gold)
+
+
+func spend_gold(amount: int) -> bool:
+	if amount <= 0 or save_data.gold < amount:
+		return false
+	save_data.gold -= amount
+	save_game()
+	gold_changed.emit(save_data.gold)
+	return true
+
+
+func get_gold() -> int:
+	return save_data.gold
+
+
+func award_defeat_gold(progress_ratio: float) -> int:
+	var cfg := progression_config
+	var reward: int = int(round(cfg.level_complete_base_gold * cfg.defeat_gold_fraction * progress_ratio))
+	save_data.gold += reward
+	save_game()
+	gold_changed.emit(save_data.gold)
+	return reward
+
+
+func on_level_completed(completed_level_number: int, hearts_remaining: int) -> int:
+	var reward: int = _award_level_completion_gold(hearts_remaining)
+	if completed_level_number + 1 > save_data.highest_level_unlocked:
+		save_data.highest_level_unlocked = completed_level_number + 1
+	_check_catalyst_unlock(completed_level_number)
+	_check_summon_unlock(completed_level_number)
+	save_game()
+	return reward
+
+
+func _award_level_completion_gold(hearts_remaining: int) -> int:
+	var cfg := progression_config
+	var reward: int = cfg.level_complete_base_gold + cfg.level_complete_bonus_per_heart * hearts_remaining
+	save_data.gold += reward
+	gold_changed.emit(save_data.gold)
+	return reward
+
+
+func get_upgrade_multiplier(resource: Resource, curve: UpgradeCurveResource) -> float:
+	if curve == null or resource == null:
+		return 1.0
+	return curve.get_multiplier_for_level(get_upgrade_level(resource))
+
+
+func get_upgrade_level(resource: Resource) -> int:
+	return save_data.upgrade_levels.get(resource, 0)
+
+
+func can_upgrade(resource: Resource, curve: BaseUpgradeCurveResource) -> bool:
+	if curve == null or resource == null:
+		return false
+	var current_level: int = get_upgrade_level(resource)
+	if current_level >= curve.get_max_level():
+		return false
+	var cost: int = curve.get_cost_for_level(current_level)
+	return cost >= 0 and save_data.gold >= cost
+
+
+func try_upgrade(resource: Resource, curve: BaseUpgradeCurveResource) -> bool:
+	if not can_upgrade(resource, curve):
+		return false
+	var current_level: int = get_upgrade_level(resource)
+	save_data.gold -= curve.get_cost_for_level(current_level)
+	save_data.upgrade_levels[resource] = current_level + 1
+	save_game()
+	gold_changed.emit(save_data.gold)
+	return true

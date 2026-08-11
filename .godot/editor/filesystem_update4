@@ -1,13 +1,1 @@
-res://scripts/combat/combat_unit.gd
-res://scenes/dragon.tscn
-res://sprites/enemies/melee/enemy_melee_sprite_frames.tres
-res://sprites/bosses/mini_boss/mini_boss_sprite_frames.tres
-res://sprites/enemies/archer/enemy_archer_sprite_frames.tres
-res://sprites/enemies/tank/enemy_brute_sprite_frames.tres
-res://sprites/enemies/assassin/enemy_shade_sprite_frames.tres
-res://sprites/bosses/dragon_sprite_frames.tres
-res://scripts/enemy/enemy.gd
-res://scenes/boss.tscn
-res://scripts/resources/enemies/boss_first_mini_boss.tres
-res://scripts/resources/enemies/dragon_final_boss.tres
-res://scripts/resources/enemies/enemy_resource.gd
+res://scripts/player/player.gd

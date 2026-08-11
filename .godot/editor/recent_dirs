@@ -1,3 +1,11 @@
+res://scripts/resources/levels/
+res://scripts/resources/enemies/
+res://scripts/ui/upgrade/
+res://scripts/resources/shields/
+res://scripts/resources/passives/
+res://scripts/levels/
+res://scripts/resources/summons/
+res://scripts/resources/
 res://sprites/bosses/
 res://sprites/bosses/mini_boss/
 res://sprites/enemies/assassin/
@@ -8,15 +16,7 @@ res://theme/
 res://sprites/ui/
 res://scripts/ui/
 res://scripts/resources/levels/waves/
-res://scripts/resources/levels/
-res://scripts/resources/enemies/
 res://scripts/resources/ui/
 res://scripts/core/
-res://scripts/resources/summons/
 res://scenes/
-res://scripts/resources/
 res://scripts/ui/main_menu/
-res://scripts/levels/
-res://scripts/resources/catalysts/
-res://scripts/resources/shields/
-res://scripts/resources/passives/

@@ -1,13 +1,10 @@
 extends StaticBody2D
 class_name Outpost
 
-# Struttura nemica di fine livello. Blocca fisicamente Player e Summon,
-# puo' essere danneggiata da magie (Projectile) e attacchi delle evocazioni
-# (riusa il sistema di combattimento esistente tramite il gruppo "enemies").
-
 signal destroyed
 
 @export var max_health: int = 100
+@export var gold_reward: int = 30
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var health_bar: HealthBar = $HealthBar
@@ -30,5 +27,7 @@ func apply_burn(total_damage: int, duration: float) -> void:
 
 
 func _on_died() -> void:
+	GameState.add_gold(gold_reward)
+	RunStats.record_outpost_destroyed(gold_reward)
 	destroyed.emit()
 	queue_free()
