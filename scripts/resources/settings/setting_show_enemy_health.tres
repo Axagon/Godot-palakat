@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettingDefinitionResource" format=3 uid="uid://bcm4cc62g8hya"]
+
+[ext_resource type="Script" uid="uid://dks5dc8bvsush" path="res://scripts/resources/settings/settings_definition_resource.gd" id="1_loamy"]
+
+[resource]
+script = ExtResource("1_loamy")
+key = "show_enemy_health"
+label = "Mostra barra della vita Nemici"
+default_value = 1.0
+metadata/_custom_type_script = "uid://dks5dc8bvsush"

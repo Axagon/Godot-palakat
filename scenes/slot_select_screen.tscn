@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bypiysb1r6m1q"]
+
+[ext_resource type="Script" uid="uid://crb440qm0fb1w" path="res://scripts/ui/startup/slot_select_screen.gd" id="1_550jl"]
+
+[node name="SlotSelectScreen" type="Control" unique_id=1000551496]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_550jl")
+
+[node name="Background" type="Panel" parent="." unique_id=1052735588]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=722490471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=629373622]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1999293119]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Seleziona Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotButton0" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1967453956]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="SlotButton1" type="Button" parent="MarginContainer/VBoxContainer" unique_id=232058264]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="SlotButton2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=950230488]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1645003469]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Indietro"
+
+[node name="OverwriteDialog" type="ConfirmationDialog" parent="." unique_id=284703763]
+size = Vector2i(624, 150)
+ok_button_text = "Conferma"
+dialog_text = "Questo slot contiene già una partita. Sovrascriverla è irreversibile. Continuare?
+"

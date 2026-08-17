@@ -49,15 +49,18 @@ func _apply_enemy_resource() -> void:
 # base della risorsa. Nessuna modifica a range/cooldown per design (vedi
 # istruzioni di progetto: il rango non altera il pattern di attacco).
 func _compute_final_stats(resource: EnemyResource) -> Dictionary:
+	var mode: DifficultyModeResource = GameState.get_current_difficulty_mode()
+	var mode_mult: float = mode.stat_multiplier if mode != null else 1.0
+
 	if resource is BossResource:
 		return {
-			"max_health": resource.max_health,
+			"max_health": int(round(resource.max_health * mode_mult)),
 			"move_speed": resource.move_speed,
-			"attack_damage": resource.attack_damage,
+			"attack_damage": int(round(resource.attack_damage * mode_mult)),
 		}
 
-	var hp_mult: float = 1.0
-	var damage_mult: float = 1.0
+	var hp_mult: float = mode_mult
+	var damage_mult: float = mode_mult
 	var speed_mult: float = 1.0
 	if _rank_config != null:
 		hp_mult *= _rank_config.get_hp_mult(_rank)
@@ -100,6 +103,18 @@ func _finish_death() -> void:
 		queue_free()
 
 
+# Rimozione senza combattimento: nessuna animazione morte, nessun oro,
+# nessun signal 'died' (bypassa _on_died()/_award_gold() completamente).
+func leak() -> void:
+	var player: Node = get_tree().get_first_node_in_group("player")
+	if player != null and player.has_method("lose_heart"):
+		player.lose_heart()
+	RunStats.record_leak()
+	set_physics_process(false)
+	attack_area.set_deferred("monitoring", false)
+	_finish_death()
+
+
 static func spawn_or_reuse(scene: PackedScene, resource: EnemyResource, spawn_position: Vector2, parent: Node, rank: EnemyRankResource.Rank = EnemyRankResource.Rank.NORMAL, rank_config: EnemyRankResource = null) -> Enemy:
 	var enemy: Enemy = ObjectPool.get_instance(scene) as Enemy
 	enemy._source_scene = scene
@@ -114,9 +129,18 @@ static func spawn_or_reuse(scene: PackedScene, resource: EnemyResource, spawn_po
 	return enemy
 
 
+func _award_equipment_drop() -> void:
+	if enemy_resource == null:
+		return
+	var guaranteed: bool = enemy_resource is BossResource
+	GameState._current_dropping_enemy_chance = enemy_resource.equipment_drop_chance
+	GameState.roll_and_award_equipment_drop(_rank, _rank_config, guaranteed)
+
+
 func _on_died() -> void:
 	super._on_died()
 	_award_gold()
+	_award_equipment_drop()
 
 
 func _award_gold() -> void:
@@ -126,9 +150,9 @@ func _award_gold() -> void:
 	if _rank_config != null and not (enemy_resource is BossResource):
 		gold_mult = _rank_config.get_gold_mult(_rank)
 	var reward: int = int(round(enemy_resource.gold_reward * gold_mult))
+	reward = GameState.apply_reward_multiplier(reward)
 	GameState.add_gold(reward)
 	if enemy_resource is BossResource:
 		RunStats.record_boss_kill(reward)
 	else:
 		RunStats.record_kill(_rank, reward)
-	

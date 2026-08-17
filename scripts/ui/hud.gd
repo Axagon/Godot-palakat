@@ -17,6 +17,7 @@ class_name HUD
 @onready var player_shield_label: Label = $Control/PlayerShieldBar/Label
 
 @onready var level_name_label: Label = $Control/LevelNameLabel
+@onready var level_progress_fill: Panel = $Control/LevelProgressBar/Fill
 
 @onready var summon_count_label: Label = $Control/SummonCountLabel
 
@@ -29,6 +30,8 @@ var _player_shield_full_width: float = 0.0
 var _mana_regen: float = 0.0
 var _food_regen: float = 0.0
 var _shield_regen: float = 0.0
+
+var _level_progress_full_width: float = 0.0
 
 
 func _ready() -> void:
@@ -57,8 +60,12 @@ func _ready() -> void:
 	player.shield_component.shield_changed.connect(_on_player_shield_changed)
 
 	var level_manager: LevelManager = get_tree().get_first_node_in_group("level_manager")
-	if level_manager != null and level_manager.level != null:
-		level_name_label.text = level_manager.level.get_display_name()
+	if level_manager != null:
+		if level_manager.level != null:
+			level_name_label.text = level_manager.level.get_display_name()
+		level_manager.level_completed.connect(_on_level_progress_completed)
+
+	_level_progress_full_width = level_progress_fill.size.x
 
 
 func _process(_delta: float) -> void:
@@ -66,6 +73,7 @@ func _process(_delta: float) -> void:
 		return
 	var active_count: int = get_tree().get_nodes_in_group("active_summons").size()
 	summon_count_label.text = "Evocazioni: %d/%d" % [active_count, _player_ref.max_summons]
+	_update_level_progress_bar()
 
 
 func _on_player_health_changed(current_health: int, max_health: int) -> void:
@@ -90,3 +98,12 @@ func _on_player_shield_changed(current_shield: float, max_shield: float) -> void
 	var ratio: float = current_shield / max_shield if max_shield > 0.0 else 0.0
 	player_shield_fill.size.x = _player_shield_full_width * ratio
 	player_shield_label.text = "%d/%d (+%.1f/s)" % [int(current_shield), int(max_shield), _shield_regen]
+
+
+func _update_level_progress_bar() -> void:
+	var ratio: float = RunStats.get_progress_ratio()
+	level_progress_fill.size.x = _level_progress_full_width * ratio
+
+
+func _on_level_progress_completed() -> void:
+	level_progress_fill.size.x = _level_progress_full_width

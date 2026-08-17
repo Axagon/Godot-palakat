@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PlayerStatDefinitionResource" format=3 uid="uid://b36lnyfrxjjkb"]
+
+[ext_resource type="Script" uid="uid://5cydd8syjt7r" path="res://scripts/resources/player_stat/player_stat_definition_resource.gd" id="1_j8wob"]
+
+[resource]
+script = ExtResource("1_j8wob")
+stat_key = "shop_buy_percent"
+stat_label = "Acquisto al Negozio"
+display_as_percent = true
+base_value = 1.0
+value_per_level = -0.05
+clamp_min = 0.75
+clamp_max = 1.0
+gold_cost_per_level = Array[int]([150, 220, 300, 400, 550])
+metadata/_custom_type_script = "uid://5cydd8syjt7r"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SettingDefinitionResource" format=3 uid="uid://4rpaujpnk3h8"]
+
+[ext_resource type="Script" uid="uid://dks5dc8bvsush" path="res://scripts/resources/settings/settings_definition_resource.gd" id="1_xy5gx"]
+
+[resource]
+script = ExtResource("1_xy5gx")
+key = "sfx_volume"
+label = "Volume Effetti"
+control_type = 0
+default_value = 1.0
+metadata/_custom_type_script = "uid://dks5dc8bvsush"

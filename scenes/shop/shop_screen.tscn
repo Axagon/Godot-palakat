@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://3sid2d5qjcc4"]
+
+[node name="ShopScreen" type="Control" unique_id=410110102]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=311159066]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1501648551]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=796580757]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1455987143]
+layout_mode = 2
+text = "Potenzia Equipaggiamento"
+
+[node name="RowsScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1361776749]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SlotRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RowsScroll" unique_id=1007211980]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1068742888]
+layout_mode = 2
+text = "Indietro"

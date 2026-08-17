@@ -22,12 +22,13 @@ func apply_damage(amount: int) -> void:
 	health_component.take_damage(amount)
 
 
-func apply_burn(total_damage: int, duration: float) -> void:
+func apply_burn(total_damage: int, duration: float, _source_element: SpellResource.Element = SpellResource.Element.FIRE) -> void:
 	health_component.apply_burn(total_damage, duration)
-
+	
 
 func _on_died() -> void:
-	GameState.add_gold(gold_reward)
-	RunStats.record_outpost_destroyed(gold_reward)
+	var reward: int = GameState.apply_reward_multiplier(gold_reward)
+	GameState.add_gold(reward)
+	RunStats.record_outpost_destroyed(reward)
 	destroyed.emit()
 	queue_free()

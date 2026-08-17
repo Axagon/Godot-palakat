@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlayerStatDefinitionResource" format=3 uid="uid://drbf2ybiivkr1"]
+
+[ext_resource type="Script" uid="uid://5cydd8syjt7r" path="res://scripts/resources/player_stat/player_stat_definition_resource.gd" id="1_j5tg4"]
+
+[resource]
+script = ExtResource("1_j5tg4")
+stat_key = "shop_slots"
+stat_label = "Slot Negozio"
+base_value = 3.0
+value_per_level = 1.0
+clamp_min = 3.0
+clamp_max = 9.0
+gold_cost_per_level = Array[int]([200, 350, 500, 700, 900, 1200])
+metadata/_custom_type_script = "uid://5cydd8syjt7r"

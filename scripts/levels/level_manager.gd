@@ -3,6 +3,7 @@ class_name LevelManager
 
 signal level_completed
 signal wave_started(wave_index: int)
+signal level_failed
 
 @export var level: LevelResource
 @export var enemy_scene: PackedScene
@@ -105,3 +106,7 @@ func _roll_rank(wave: WaveResource) -> EnemyRankResource.Rank:
 
 func _on_outpost_destroyed() -> void:
 	level_completed.emit()
+
+
+func fail_level() -> void:
+	level_failed.emit()

@@ -23,3 +23,5 @@ class_name EnemyResource
 @export var element: SpellResource.Element = SpellResource.Element.FIRE
 @export var applies_elemental_effects: bool = false
 @export var fire_resistance_percent: float = 0.0
+
+@export var equipment_drop_chance: float = 0.0

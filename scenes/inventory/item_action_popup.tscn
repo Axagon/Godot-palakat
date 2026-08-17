@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://6yb0xuntm81d"]
+
+[ext_resource type="Script" uid="uid://qny46wvwrff0" path="res://scripts/ui/inventory/item_action_popup.gd" id="1_ujxhv"]
+
+[node name="ItemActionPopup" type="Control" unique_id=1185900264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ujxhv")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=459534212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="Panel" parent="." unique_id=99131707]
+custom_minimum_size = Vector2(320, 280)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=758152748]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RarityLabel" type="Label" parent="Panel" unique_id=81872376]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StatsContainer" type="VBoxContainer" parent="Panel" unique_id=1870369494]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EquipButton" type="Button" parent="Panel" unique_id=1719687830]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FavoriteButton" type="Button" parent="Panel" unique_id=239100151]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SellButton" type="Button" parent="Panel" unique_id=1290646752]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DestroyButton" type="Button" parent="Panel" unique_id=1986651743]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=2034581006]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SellConfirmDialog" type="ConfirmationDialog" parent="." unique_id=396089535]
+size = Vector2i(400, 150)
+ok_button_text = "Conferma"
+cancel_button_text = "Annulla"
+
+[node name="DestroyConfirmDialog" type="ConfirmationDialog" parent="." unique_id=786158991]
+size = Vector2i(400, 150)
+ok_button_text = "Conferma"
+cancel_button_text = "Annulla"

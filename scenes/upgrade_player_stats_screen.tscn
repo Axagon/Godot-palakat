@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c7trj6wg1w3nn"]
+
+[ext_resource type="Script" uid="uid://dc068afw707h0" path="res://scripts/ui/upgrade/upgrade_player_stats_screen.gd" id="1_vwxed"]
+[ext_resource type="PackedScene" uid="uid://dpd8dbhhpw6v8" path="res://scripts/ui/upgrade/player_stat_row_ui.tscn" id="2_vepd8"]
+
+[node name="UpgradePlayerStatsScreen" type="Control" unique_id=2031661626]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vwxed")
+row_scene = ExtResource("2_vepd8")
+
+[node name="Background" type="Panel" parent="." unique_id=344115969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1027106730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1855030224]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1663435966]
+layout_mode = 2
+text = "Potenzia Equipaggiamento"
+
+[node name="RowsScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1462922715]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RowsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RowsScroll" unique_id=1518326386]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=524207166]
+layout_mode = 2
+text = "Indietro"

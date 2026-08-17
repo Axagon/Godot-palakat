@@ -68,3 +68,9 @@ columns = 4
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1980334932]
 layout_mode = 2
 text = "Inizia livello"
+
+[node name="FullInventoryDialog" type="ConfirmationDialog" parent="." unique_id=917441641]
+size = Vector2i(916, 150)
+ok_button_text = "Continua"
+dialog_text = "Il tuo inventario è pieno. Eventuali nuovi oggetti trovati in questo livello andranno persi. Vuoi continuare comunque?"
+cancel_button_text = "Indietro"

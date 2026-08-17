@@ -1,1 +1,9 @@
-res://scripts/player/player.gd
+res://scenes/upgrade_player_stats_screen.tscn
+res://sprites/enemies/melee/enemy_melee_sprite_frames.tres
+res://sprites/enemies/archer/enemy_archer_sprite_frames.tres
+res://sprites/enemies/tank/enemy_brute_sprite_frames.tres
+res://sprites/enemies/assassin/enemy_shade_sprite_frames.tres
+res://sprites/bosses/mini_boss/mini_boss_sprite_frames.tres
+res://sprites/bosses/dragon_sprite_frames.tres
+res://scripts/ui/upgrade/upgrade_player_stats_screen.gd
+res://scenes/game_state.tscn

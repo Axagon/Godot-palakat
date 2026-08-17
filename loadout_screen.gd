@@ -9,6 +9,7 @@ class_name LoadoutScreen
 @onready var ultimate_row: HBoxContainer = $MarginContainer/VBoxContainer/CatalystSection/UltimateRow
 @onready var summon_grid: GridContainer = $MarginContainer/VBoxContainer/SummonSection/SummonGrid
 @onready var start_button: Button = $MarginContainer/VBoxContainer/StartButton
+@onready var full_inventory_dialog: ConfirmationDialog = $FullInventoryDialog
 
 var _selected_catalysts: Array[CatalystResource] = [null, null, null]
 var _selected_summons: Array[SummonResource] = []
@@ -27,7 +28,8 @@ func _ready() -> void:
 	_apply_default_catalyst_selection(owned)
 	_build_summon_grid()
 	start_button.pressed.connect(_on_start_pressed)
-
+	full_inventory_dialog.confirmed.connect(_start_level)
+	
 
 func _build_catalyst_row(row: HBoxContainer, slot: SpellResource.SpellSlot, owned: Array[CatalystResource]) -> void:
 	var group := ButtonGroup.new()
@@ -100,6 +102,14 @@ func _on_summon_toggled(summon: SummonResource, button: Button) -> void:
 
 
 func _on_start_pressed() -> void:
+	if GameState.is_inventory_full():
+		full_inventory_dialog.popup_centered()
+		return
+	_start_level()
+
+
+func _start_level() -> void:
 	GameState.selected_catalysts = _selected_catalysts
 	GameState.selected_deck = _selected_summons
 	get_tree().change_scene_to_file(game_scene_path)
+	

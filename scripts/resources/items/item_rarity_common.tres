@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemRarityResource" format=3 uid="uid://c7rjbf2prf73q"]
+
+[ext_resource type="Script" uid="uid://dajjxcnbawu01" path="res://scripts/resources/items/item_rarity_resource.gd" id="1_gtdbp"]
+
+[resource]
+script = ExtResource("1_gtdbp")
+rarity_name = "Comune"
+tint_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+drop_weight = 10.0
+roll_min_percent = -0.1
+metadata/_custom_type_script = "uid://dajjxcnbawu01"

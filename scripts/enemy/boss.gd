@@ -66,3 +66,14 @@ func reuse_with_resource(new_resource: EnemyResource) -> void:
 		return
 	_aoe_timer = _boss_resource.aoe_interval
 	_reinforcement_timer = _boss_resource.reinforcement_interval
+
+# Override: un Boss che raggiunge la LeakZone non e' un leak recuperabile
+# come i nemici comuni, ma fallimento diretto del livello (il completamento
+# richiede sempre la sconfitta del boss, mai il suo aggiramento).
+func leak() -> void:
+	var level_manager: LevelManager = get_tree().get_first_node_in_group("level_manager")
+	if level_manager != null:
+		level_manager.fail_level()
+	set_physics_process(false)
+	attack_area.set_deferred("monitoring", false)
+	_finish_death()

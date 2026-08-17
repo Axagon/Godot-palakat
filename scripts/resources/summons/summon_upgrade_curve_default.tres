@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_revng")
 max_health_mult_per_level = Array[float]([1.03, 1.03, 1.07, 1.07, 1.12, 1.12, 1.17, 1.17, 1.23, 1.23])
-attack_damage_mult_per_level = Array[float]([1.0, 1.04, 1.04, 1.09, 1.09, 1.1400000000000001, 1.1400000000000001, 1.2, 1.2, 1.26])
+attack_damage_mult_per_level = Array[float]([1.0, 1.04, 1.04, 1.09, 1.09, 1.14, 1.14, 1.2, 1.2, 1.26])
 move_speed_mult_per_level = Array[float]([1.0, 1.0, 1.0, 1.0, 1.05, 1.05, 1.05, 1.05, 1.1, 1.1])
 gold_cost_per_level = Array[int]([25, 45, 70, 100, 140, 190, 250, 320, 400, 500])
+fragment_cost_per_level = Array[int]([0, 0, 1, 2, 3, 4, 5, 6, 7, 8])
 metadata/_custom_type_script = "uid://dectbgx10j5hm"

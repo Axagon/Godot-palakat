@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemRarityResource" format=3 uid="uid://bngqgtblbr7qt"]
+
+[ext_resource type="Script" uid="uid://dajjxcnbawu01" path="res://scripts/resources/items/item_rarity_resource.gd" id="1_lt8io"]
+
+[resource]
+script = ExtResource("1_lt8io")
+rarity_name = "Epica"
+tint_color = Color(0.9309246, 0.6651851, 1, 1)
+roll_min_percent = 0.1
+roll_max_percent = 0.2
+sell_value_multiplier = 2.5
+fragment_destroy_reward = 4
+metadata/_custom_type_script = "uid://dajjxcnbawu01"

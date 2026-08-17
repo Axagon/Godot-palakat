@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d0fbdqekw0n21"]
+
+[ext_resource type="Script" uid="uid://cm2vu38o3kk6y" path="res://scripts/ui/startup/difficulty_mode_screen.gd" id="1_xqey3"]
+
+[node name="DifficultyModeScreen" type="Control" unique_id=105125781]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqey3")
+
+[node name="Background" type="Panel" parent="." unique_id=1697223481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1040684470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=418385704]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1335842925]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Scegli la Difficoltà
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1439552633]
+layout_mode = 2

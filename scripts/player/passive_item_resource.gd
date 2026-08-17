@@ -24,3 +24,9 @@ enum UpgradeStat { MAX_HEALTH, MAX_MANA, MANA_REGEN, MAX_FOOD, FOOD_REGEN, MOVE_
 
 @export var upgrade_curve: UpgradeCurveResource = null
 @export var upgrade_target_stat: UpgradeStat = UpgradeStat.SPELL_DAMAGE
+
+@export var base_value: int = 0
+
+
+func get_rollable_field_names() -> Array[String]:
+	return ["max_health_flat", "max_mana_flat", "mana_regen_flat", "max_food_flat", "food_regen_flat", "move_speed_percent", "spell_damage_percent", "shield_regen_percent"]

@@ -2,8 +2,26 @@
 
 [ext_resource type="Script" uid="uid://dyctt1yr4j1fi" path="res://scripts/levels/game_state.gd" id="1_jy5aj"]
 [ext_resource type="Resource" uid="uid://b0ngikp24tp3l" path="res://scripts/resources/progression_config_default.tres" id="2_a1qx6"]
+[ext_resource type="Script" uid="uid://uhlp8kutk4x4" path="res://scripts/resources/game_difficulty_mode_resource.gd" id="3_vsyf1"]
+[ext_resource type="Resource" uid="uid://wrvb6hnlmdwe" path="res://scripts/resources/game_difficulty_easy.tres" id="4_3oy0g"]
+[ext_resource type="Resource" uid="uid://bdliiisbr745q" path="res://scripts/resources/game_difficulty_normal.tres" id="5_7ti0s"]
+[ext_resource type="Resource" uid="uid://dl55iv8mq8clt" path="res://scripts/resources/game_difficulty_hard.tres" id="6_ou381"]
+[ext_resource type="Resource" uid="uid://cvijvhp6ft6nd" path="res://scripts/resources/game_difficulty_champion.tres" id="7_hinck"]
+[ext_resource type="Resource" uid="uid://dtoyn7bk7542u" path="res://scripts/resources/game_difficulty_inferno.tres" id="8_b43q5"]
+[ext_resource type="Script" uid="uid://5cydd8syjt7r" path="res://scripts/resources/player_stat/player_stat_definition_resource.gd" id="9_b43q5"]
+[ext_resource type="Script" uid="uid://dajjxcnbawu01" path="res://scripts/resources/items/item_rarity_resource.gd" id="9_rjw16"]
+[ext_resource type="Resource" uid="uid://c7rjbf2prf73q" path="res://scripts/resources/items/item_rarity_common.tres" id="10_730wy"]
+[ext_resource type="Resource" uid="uid://b5ril82rsr6h5" path="res://scripts/resources/player_stat/stat_inventory_slots.tres" id="10_n02c0"]
+[ext_resource type="Resource" uid="uid://d16exkftwwvvy" path="res://scripts/resources/items/item_rarity_rare.tres" id="11_opsgy"]
+[ext_resource type="Resource" uid="uid://drbf2ybiivkr1" path="res://scripts/resources/player_stat/stat_shop_slots.tres" id="11_wshnm"]
+[ext_resource type="Resource" uid="uid://b36lnyfrxjjkb" path="res://scripts/resources/player_stat/stat_shop_buy_percent.tres" id="12_068d4"]
+[ext_resource type="Resource" uid="uid://bngqgtblbr7qt" path="res://scripts/resources/items/item_rarity_epic.tres" id="12_eetof"]
+[ext_resource type="Resource" uid="uid://bv0qu24wnysag" path="res://scripts/resources/player_stat/stat_shop_sell_percent.tres" id="13_rjw16"]
 
 [node name="GameState" type="Node" unique_id=451600808]
 script = ExtResource("1_jy5aj")
 progression_config = ExtResource("2_a1qx6")
 debug_unlock_everything = true
+difficulty_modes = Array[ExtResource("3_vsyf1")]([ExtResource("4_3oy0g"), ExtResource("5_7ti0s"), ExtResource("6_ou381"), ExtResource("7_hinck"), ExtResource("8_b43q5")])
+item_rarities = Array[ExtResource("9_rjw16")]([ExtResource("10_730wy"), ExtResource("11_opsgy"), ExtResource("12_eetof")])
+player_stat_definitions = Array[ExtResource("9_b43q5")]([ExtResource("10_n02c0"), ExtResource("11_wshnm"), ExtResource("12_068d4"), ExtResource("13_rjw16")])

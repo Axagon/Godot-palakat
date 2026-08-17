@@ -7,15 +7,15 @@
 [ext_resource type="LabelSettings" uid="uid://4hf2owse5lrr" path="res://scripts/resources/ui/label_settings_hud.tres" id="5_uo2fv"]
 [ext_resource type="StyleBox" uid="uid://drewplxanqitg" path="res://scripts/ui/hud_in_game_bars.tres" id="6_047uy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6257g"]
-bg_color = Color(0.95468724, 0.48452926, 0.48452926, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kysvp"]
+bg_color = Color(0, 0, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kysvp"]
-bg_color = Color(0, 0, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6257g"]
+bg_color = Color(0.95468724, 0.48452926, 0.48452926, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -67,6 +67,31 @@ grow_horizontal = 2
 label_settings = ExtResource("5_uo2fv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LevelProgressBar" type="Control" parent="Control" unique_id=1286619337]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 95.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-75, 0)
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="Control/LevelProgressBar" unique_id=900261294]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+theme_override_styles/panel = ExtResource("6_047uy")
+
+[node name="Fill" type="Panel" parent="Control/LevelProgressBar" unique_id=185649262]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kysvp")
 
 [node name="VirtualJoystick" type="Control" parent="Control" unique_id=341947377]
 custom_minimum_size = Vector2(250, 250)

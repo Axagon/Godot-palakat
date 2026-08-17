@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DifficultyModeResource" format=3 uid="uid://dtoyn7bk7542u"]
+
+[ext_resource type="Script" uid="uid://uhlp8kutk4x4" path="res://scripts/resources/game_difficulty_mode_resource.gd" id="1_oy7qr"]
+
+[resource]
+script = ExtResource("1_oy7qr")
+mode_name = "Inferno"
+stat_multiplier = 3.0
+reward_multiplier = 1.45
+metadata/_custom_type_script = "uid://uhlp8kutk4x4"

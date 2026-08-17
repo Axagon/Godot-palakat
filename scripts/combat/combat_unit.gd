@@ -21,7 +21,6 @@ var _attack_timer: float = 0.0
 var _target: Node2D = null
 var _bodies_in_range: Array[Node2D] = []
 var _target_priority: Array[CombatUnit.Category] = []
-var _can_target_flying: bool = true
 
 var _move_speed: float = 0.0
 var _attack_damage: int = 0
@@ -32,6 +31,7 @@ var _attack_range: float = 40.0
 var damage_buff_multiplier: float = 1.0
 var _damage_buff_timer: float = 0.0
 
+var _fire_resistance_percent: float = 0.0
 var _element: SpellResource.Element = SpellResource.Element.FIRE
 var _applies_elemental_effects: bool = false
 
@@ -216,9 +216,6 @@ func apply_elemental_damage(amount: int, source_element: SpellResource.Element) 
 func apply_burn(total_damage: int, duration: float, source_element: SpellResource.Element = SpellResource.Element.FIRE) -> void:
 	var final_damage: int = _apply_fire_resistance(total_damage, source_element)
 	health_component.apply_burn(final_damage, duration)
-
-
-var _fire_resistance_percent: float = 0.0
 
 
 func set_fire_resistance(percent: float) -> void:

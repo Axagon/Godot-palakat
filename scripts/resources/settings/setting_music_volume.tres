@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SettingDefinitionResource" format=3 uid="uid://bosqbf6yqpt3r"]
+
+[ext_resource type="Script" uid="uid://dks5dc8bvsush" path="res://scripts/resources/settings/settings_definition_resource.gd" id="1_iqrj6"]
+
+[resource]
+script = ExtResource("1_iqrj6")
+key = "music_volume"
+label = "Volume musica"
+control_type = 0
+default_value = 1.0
+metadata/_custom_type_script = "uid://dks5dc8bvsush"

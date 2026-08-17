@@ -24,7 +24,7 @@
 [ext_resource type="Resource" path="res://scripts/resources/levels/level_17.tres" id="19_nvawj"]
 [ext_resource type="Resource" path="res://scripts/resources/levels/level_18.tres" id="20_y1h1r"]
 [ext_resource type="Resource" path="res://scripts/resources/levels/level_19.tres" id="21_sutdi"]
-[ext_resource type="Resource" path="res://scripts/resources/levels/level_20.tres" id="22_58nw7"]
+[ext_resource type="Resource" uid="uid://eh632a71f8ua" path="res://scripts/resources/levels/level_20.tres" id="22_58nw7"]
 
 [node name="MainMenu" type="Control" unique_id=1027720489]
 layout_mode = 3
@@ -62,6 +62,21 @@ text = "PalaKat: Sir Whiskers's Chronicles"
 [node name="GoldLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=767172161]
 layout_mode = 2
 
+[node name="FragmentsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=346549521]
+layout_mode = 2
+
+[node name="InventoryButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1015202525]
+layout_mode = 2
+text = "Inventario oggetti"
+
+[node name="ShopButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=21017744]
+layout_mode = 2
+text = "Negozio"
+
+[node name="UpgradePlayerStatsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1634220275]
+layout_mode = 2
+text = "Potenzia Player"
+
 [node name="UpgradeEquipmentButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=538866175]
 layout_mode = 2
 text = "Potenzia Equipaggiamento"
@@ -70,6 +85,14 @@ text = "Potenzia Equipaggiamento"
 layout_mode = 2
 text = "Potenzia Evocazioni"
 
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=961405811]
+layout_mode = 2
+text = "Impostazioni"
+
 [node name="LevelGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=460382566]
 layout_mode = 2
 columns = 5
+
+[node name="BackToStartupButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=199981265]
+layout_mode = 2
+text = "Torna alla Schermata Iniziale"

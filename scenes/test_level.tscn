@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://brbuoqrnnwkba" path="res://scripts/resources/levels/difficulty_scaling_default.tres" id="8_fyxdr"]
 [ext_resource type="Texture2D" uid="uid://cwmps2r6a8a86" path="res://sprites/backgroundForest.png" id="9_7gix3"]
 [ext_resource type="PackedScene" uid="uid://dle0ig4rbdewy" path="res://scenes/game_overlay.tscn" id="10_4asn1"]
+[ext_resource type="PackedScene" uid="uid://bigmopiqppo17" path="res://scenes/leak_zone.tscn" id="10_kpk0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gix3"]
 texture = ExtResource("9_7gix3")
@@ -54,6 +55,9 @@ position = Vector2(90, 300)
 
 [node name="LevelBoundary" parent="." unique_id=1845524008 instance=ExtResource("7_ahbqi")]
 position = Vector2(0, 300)
+
+[node name="LeakZone" parent="." unique_id=2072220760 instance=ExtResource("10_kpk0m")]
+position = Vector2(-50, 300)
 
 [node name="Outpost" parent="." unique_id=178990198 instance=ExtResource("7_88ety")]
 position = Vector2(3750, 300)

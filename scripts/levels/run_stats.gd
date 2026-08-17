@@ -17,6 +17,9 @@ var outpost_destroyed: bool = false
 var gold_from_outpost: int = 0
 
 var total_enemies_planned: int = 0
+var leaks: int = 0
+
+var items_lost_to_full_inventory: int = 0
 
 
 func reset(planned_enemies: int) -> void:
@@ -31,6 +34,8 @@ func reset(planned_enemies: int) -> void:
 	outpost_destroyed = false
 	gold_from_outpost = 0
 	total_enemies_planned = planned_enemies
+	leaks = 0
+	items_lost_to_full_inventory = 0
 
 
 func record_kill(rank: EnemyRankResource.Rank, gold: int) -> void:
@@ -46,6 +51,10 @@ func record_kill(rank: EnemyRankResource.Rank, gold: int) -> void:
 			gold_from_super_elite += gold
 
 
+func record_leak() -> void:
+	leaks += 1
+
+
 func record_boss_kill(gold: int) -> void:
 	boss_defeated = true
 	gold_from_boss = gold
@@ -57,7 +66,7 @@ func record_outpost_destroyed(gold: int) -> void:
 
 
 func get_total_kills() -> int:
-	return kills_normal + kills_elite + kills_super_elite + (1 if boss_defeated else 0)
+	return kills_normal + kills_elite + kills_super_elite + leaks + (1 if boss_defeated else 0)
 
 
 func get_progress_ratio() -> float:
@@ -68,3 +77,7 @@ func get_progress_ratio() -> float:
 
 func get_kills_gold_total() -> int:
 	return gold_from_normal + gold_from_elite + gold_from_super_elite
+
+
+func record_item_lost() -> void:
+	items_lost_to_full_inventory += 1

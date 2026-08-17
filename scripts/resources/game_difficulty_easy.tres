@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DifficultyModeResource" format=3 uid="uid://wrvb6hnlmdwe"]
+
+[ext_resource type="Script" uid="uid://uhlp8kutk4x4" path="res://scripts/resources/game_difficulty_mode_resource.gd" id="1_dvhg4"]
+
+[resource]
+script = ExtResource("1_dvhg4")
+mode_name = "Facile"
+stat_multiplier = 0.75
+reward_multiplier = 0.9
+metadata/_custom_type_script = "uid://uhlp8kutk4x4"

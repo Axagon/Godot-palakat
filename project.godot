@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PalaKAT"
-run/main_scene="uid://cx443ywkkevqf"
+run/main_scene="uid://p1e2olnm27yk"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameState="*uid://c67moly7s3k0f"
 ObjectPool="*uid://cth3v7miabqdx"
 RunStats="*uid://dxj6qri7sndiq"
+SettingsManager="*uid://yfavdi4u7nsq"
 
 [display]
 

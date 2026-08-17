@@ -1,3 +1,9 @@
+PlayerStatDefinitionResource
+PlayerStatUpgradeCurveResource
+ItemRarityResource
+InventoryItemResource
+DifficultyModeResource
+SettingDefinitionResource
 EnemyResource
 ExplodingEnemyResource
 SummonUpgradeCurveResource
@@ -6,9 +12,3 @@ DifficultyScalingResource
 EnemyRankResource
 StyleBoxTexture
 AtlasTexture
-Theme
-WaveResource
-LevelResource
-DragonBossResource
-LabelSettings
-SummonResource

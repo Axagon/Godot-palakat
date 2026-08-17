@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DifficultyModeResource" format=3 uid="uid://cvijvhp6ft6nd"]
+
+[ext_resource type="Script" uid="uid://uhlp8kutk4x4" path="res://scripts/resources/game_difficulty_mode_resource.gd" id="1_tc685"]
+
+[resource]
+script = ExtResource("1_tc685")
+mode_name = "Campione"
+stat_multiplier = 2.25
+reward_multiplier = 1.3
+metadata/_custom_type_script = "uid://uhlp8kutk4x4"

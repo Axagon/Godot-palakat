@@ -45,7 +45,14 @@ func _apply_loadout_selection() -> void:
 		secondary_catalyst = GameState.selected_catalysts[SpellResource.SpellSlot.SECONDARY]
 	if GameState.selected_catalysts[SpellResource.SpellSlot.ULTIMATE] != null:
 		ultimate_catalyst = GameState.selected_catalysts[SpellResource.SpellSlot.ULTIMATE]
-	
+
+	var equipped_passive: PassiveItemResource = GameState.get_equipped_passive_item()
+	if equipped_passive != null:
+		passive_item = equipped_passive
+	var equipped_shield: ShieldResource = GameState.get_equipped_shield_item()
+	if equipped_shield != null:
+		shield_item = equipped_shield
+
 
 func _equip_slot(catalyst: CatalystResource, slot: SpellResource.SpellSlot) -> void:
 	var built_spell: SpellResource = _build_spell(catalyst, slot)

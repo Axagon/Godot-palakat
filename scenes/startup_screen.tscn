@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://p1e2olnm27yk"]
+
+[ext_resource type="Script" uid="uid://cbvu4e7my81am" path="res://scripts/ui/startup/startup_screen.gd" id="1_jamkg"]
+
+[node name="StartupScreen" type="Control" unique_id=1017948162]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jamkg")
+
+[node name="Background" type="Panel" parent="." unique_id=1278769482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1656965293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1065197913]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=523494807]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Sir Whiskers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=183460517]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Continua"
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1992364646]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Nuova Partita"
+
+[node name="LoadGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1795534041]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Carica Partita"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=388358069]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Impostazioni"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1357006632]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Esci"

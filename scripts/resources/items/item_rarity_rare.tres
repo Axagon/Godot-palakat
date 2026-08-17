@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemRarityResource" format=3 uid="uid://d16exkftwwvvy"]
+
+[ext_resource type="Script" uid="uid://dajjxcnbawu01" path="res://scripts/resources/items/item_rarity_resource.gd" id="1_vvwdm"]
+
+[resource]
+script = ExtResource("1_vvwdm")
+rarity_name = "Rara"
+tint_color = Color(0.58383155, 0.76737565, 1, 1)
+drop_weight = 4.0
+roll_max_percent = 0.1
+sell_value_multiplier = 1.6
+fragment_destroy_reward = 2
+metadata/_custom_type_script = "uid://dajjxcnbawu01"

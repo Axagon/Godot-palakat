@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_kp4xd")
-gold_cost_per_level = Array[int]([30, 60, 100, 150, 220])
 stat_multiplier_per_level = Array[float]([1.06, 1.13, 1.2, 1.28, 1.37])
+gold_cost_per_level = Array[int]([30, 60, 100, 150, 220])
+fragment_cost_per_level = Array[int]([0, 0, 1, 3, 5])
 metadata/_custom_type_script = "uid://eh4ssx6ncqvx"

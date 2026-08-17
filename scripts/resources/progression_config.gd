@@ -16,3 +16,9 @@ class_name ProgressionConfig
 @export var level_complete_bonus_per_heart: int = 10
 
 @export var defeat_gold_fraction: float = 0.4
+
+@export var fragment_reward_normal: int = 1
+@export var fragment_reward_checkpoint: int = 3
+
+@export var droppable_passive_items: Array[PassiveItemResource] = []
+@export var droppable_shield_items: Array[ShieldResource] = []

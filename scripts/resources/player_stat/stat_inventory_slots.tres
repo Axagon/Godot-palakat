@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlayerStatDefinitionResource" format=3 uid="uid://b5ril82rsr6h5"]
+
+[ext_resource type="Script" uid="uid://5cydd8syjt7r" path="res://scripts/resources/player_stat/player_stat_definition_resource.gd" id="1_my78f"]
+
+[resource]
+script = ExtResource("1_my78f")
+stat_key = "inventory_slots"
+stat_label = "Slot Inventario"
+base_value = 10.0
+value_per_level = 5.0
+clamp_min = 10.0
+clamp_max = 35.0
+gold_cost_per_level = Array[int]([150, 250, 400, 600, 900])
+metadata/_custom_type_script = "uid://5cydd8syjt7r"

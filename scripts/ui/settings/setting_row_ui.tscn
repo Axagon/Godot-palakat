@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://coe8mhx27lqqv"]
+
+[ext_resource type="Script" uid="uid://dfrrtviixy6qt" path="res://scripts/ui/settings/setting_row_ui.gd" id="1_iuo07"]
+
+[node name="SettingRowUi" type="HBoxContainer" unique_id=2134827955]
+custom_minimum_size = Vector2(0, 50)
+size_flags_horizontal = 4
+script = ExtResource("1_iuo07")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1706800780]
+layout_mode = 2
+
+[node name="SliderControl" type="HSlider" parent="." unique_id=762178721]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ToggleControl" type="CheckButton" parent="." unique_id=852561849]
+layout_mode = 2

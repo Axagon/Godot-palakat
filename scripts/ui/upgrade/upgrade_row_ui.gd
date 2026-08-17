@@ -52,7 +52,10 @@ func _refresh() -> void:
 		upgrade_button.disabled = true
 	else:
 		var cost: int = _curve.get_cost_for_level(current_level)
-		cost_label.text = "Costo: %d Lische d'Oro" % cost
+		var fragment_cost: int = _curve.get_fragment_cost_for_level(current_level)
+		if fragment_cost > 0:
+			cost_label.text = "Costo: %d Lische d'Oro + %d Frammenti" % [cost, fragment_cost]
+		else:
+			cost_label.text = "Costo: %d Lische d'Oro" % cost
 		upgrade_button.text = "Potenzia"
 		upgrade_button.disabled = not GameState.can_upgrade(_resource, _curve)
-	

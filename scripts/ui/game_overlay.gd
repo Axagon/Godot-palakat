@@ -25,6 +25,7 @@ func _ready() -> void:
 	var level_manager: LevelManager = get_tree().get_first_node_in_group("level_manager")
 	if level_manager != null:
 		level_manager.level_completed.connect(_on_level_completed)
+		level_manager.level_failed.connect(_on_level_failed)
 
 	game_over_retry_button.pressed.connect(_on_retry_pressed)
 	victory_retry_button.pressed.connect(_on_retry_pressed)
@@ -54,6 +55,16 @@ func _on_level_completed() -> void:
 	_show_panel(victory_panel)
 
 
+func _on_level_failed() -> void:
+	var hearts_remaining: int = _player_health_component.current_health if _player_health_component != null else 0
+	var max_hearts: int = _player_health_component.max_health if _player_health_component != null else 0
+	game_over_result_label.text = "%d/%d" % [hearts_remaining, max_hearts]
+	var progress_ratio: float = RunStats.get_progress_ratio()
+	var reward: int = GameState.award_defeat_gold(progress_ratio)
+	game_over_reward_label.text = _build_defeat_reward_text(reward)
+	_show_panel(game_over_panel)
+
+
 func _build_victory_reward_text(completion_reward: int) -> String:
 	var lines: Array[String] = []
 	lines.append("Nemici Normali sconfitti  x%d  = %d" % [RunStats.kills_normal, RunStats.gold_from_normal])
@@ -66,6 +77,8 @@ func _build_victory_reward_text(completion_reward: int) -> String:
 	lines.append("Bonus completamento  = %d" % completion_reward)
 	var total: int = RunStats.get_kills_gold_total() + RunStats.gold_from_boss + RunStats.gold_from_outpost + completion_reward
 	lines.append("Totale  = %d" % total)
+	if RunStats.items_lost_to_full_inventory > 0:
+		lines.append("Oggetti persi (inventario pieno)  x%d" % RunStats.items_lost_to_full_inventory)
 	return "\n".join(lines)
 
 
@@ -77,6 +90,8 @@ func _build_defeat_reward_text(reward: int) -> String:
 	lines.append("Bonus progressi  = %d" % reward)
 	var total: int = RunStats.get_kills_gold_total() + reward
 	lines.append("Totale  = %d" % total)
+	if RunStats.items_lost_to_full_inventory > 0:
+		lines.append("Oggetti persi (inventario pieno)  x%d" % RunStats.items_lost_to_full_inventory)
 	return "\n".join(lines)
 
 

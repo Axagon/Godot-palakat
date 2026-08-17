@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dpd8dbhhpw6v8"]
+
+[ext_resource type="Script" uid="uid://d2q8mcdwe8bvi" path="res://scripts/ui/upgrade/player_stat_row_ui.gd" id="1_pg1hk"]
+
+[node name="PlayerStatRowUI" type="HBoxContainer" unique_id=1972885346]
+custom_minimum_size = Vector2(0, 50)
+offset_right = 15.0
+offset_bottom = 50.0
+script = ExtResource("1_pg1hk")
+
+[node name="NameLabel" type="Label" parent="." unique_id=2090814812]
+layout_mode = 2
+
+[node name="ValueLabel" type="Label" parent="." unique_id=879063437]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="." unique_id=939772134]
+layout_mode = 2
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=809486271]
+layout_mode = 2

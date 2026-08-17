@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://oibcsqm88dma"]
+
+[ext_resource type="Script" uid="uid://b67py7xe8wahb" path="res://scripts/ui/settings/settings_screen.gd" id="1_7q1qo"]
+[ext_resource type="PackedScene" uid="uid://coe8mhx27lqqv" path="res://scripts/ui/settings/setting_row_ui.tscn" id="2_t5s44"]
+[ext_resource type="Script" uid="uid://dks5dc8bvsush" path="res://scripts/resources/settings/settings_definition_resource.gd" id="3_hbblf"]
+[ext_resource type="Resource" uid="uid://bosqbf6yqpt3r" path="res://scripts/resources/settings/setting_music_volume.tres" id="4_2k6ht"]
+[ext_resource type="Resource" uid="uid://4rpaujpnk3h8" path="res://scripts/resources/settings/setting_sfx_volume.tres" id="5_huheb"]
+[ext_resource type="Resource" uid="uid://bcm4cc62g8hya" path="res://scripts/resources/settings/setting_show_enemy_health.tres" id="6_netge"]
+
+[node name="SettingScreen" type="Control" unique_id=255312637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7q1qo")
+row_scene = ExtResource("2_t5s44")
+setting_definitions = Array[ExtResource("3_hbblf")]([ExtResource("4_2k6ht"), ExtResource("5_huheb"), ExtResource("6_netge")])
+
+[node name="Background" type="Panel" parent="." unique_id=344115969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1027106730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1855030224]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1663435966]
+layout_mode = 2
+text = "Potenzia Equipaggiamento"
+
+[node name="RowsScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1462922715]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RowsContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/RowsScroll" unique_id=1518326386]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=524207166]
+layout_mode = 2
+text = "Indietro"

@@ -56,9 +56,13 @@ func _physics_process(_delta: float) -> void:
 
 
 func apply_damage(amount: int) -> void:
-	var remaining_damage: int = shield_component.absorb_damage(amount)
-	if remaining_damage > 0:
-		health_component.take_damage(remaining_damage)
+	var reaches_health: bool = shield_component.absorb_damage(amount)
+	if reaches_health:
+		health_component.take_damage(1)
+
+
+func lose_heart() -> void:
+	health_component.take_damage(1)
 
 
 func apply_heal(amount: int) -> void:

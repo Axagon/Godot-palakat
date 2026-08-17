@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b8lsdc18lw0kk"]
+
+[ext_resource type="Script" uid="uid://bvit51a2l1k0o" path="res://scripts/ui/inventory/inventory_screen.gd" id="1_reol8"]
+[ext_resource type="PackedScene" uid="uid://ccrq2qyt6ec5j" path="res://scripts/ui/inventory/inventory_slot_ui.tscn" id="2_7uhx6"]
+[ext_resource type="PackedScene" uid="uid://6yb0xuntm81d" path="res://scenes/inventory/item_action_popup.tscn" id="3_bac74"]
+
+[node name="InventoryScreen" type="Control" unique_id=255312637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_reol8")
+slot_scene = ExtResource("2_7uhx6")
+popup_scene = ExtResource("3_bac74")
+
+[node name="Background" type="Panel" parent="." unique_id=344115969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1027106730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1855030224]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1663435966]
+layout_mode = 2
+text = "Potenzia Equipaggiamento"
+
+[node name="RowsScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1462922715]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SlotGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/RowsScroll" unique_id=1441243651]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=524207166]
+layout_mode = 2
+text = "Indietro"

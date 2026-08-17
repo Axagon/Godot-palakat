@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelResource" format=3]
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://eh632a71f8ua"]
 
 [ext_resource type="Script" uid="uid://cygrejrg4iqqf" path="res://scripts/resources/levels/level_resource.gd" id="1_tdm7k"]
 [ext_resource type="Script" uid="uid://b1cah80f4bxhi" path="res://scripts/resources/levels/waves/wave_resource.gd" id="2_i5imf"]
@@ -11,5 +11,4 @@ level_number = 20
 level_name = "Livello 20 - Il Drago"
 waves = Array[ExtResource("2_i5imf")]([ExtResource("3_svkha"), ExtResource("4_71pmg")])
 world_number = 2
-level_index_in_world = 10
 metadata/_custom_type_script = "uid://cygrejrg4iqqf"

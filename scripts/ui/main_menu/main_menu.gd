@@ -34,20 +34,32 @@ const LEVEL_NUMBER_REGIONS := [
 
 @onready var level_grid: GridContainer = $MarginContainer/VBoxContainer/LevelGrid
 @onready var gold_label: Label = $MarginContainer/VBoxContainer/GoldLabel
+@onready var fragments_label: Label = $MarginContainer/VBoxContainer/FragmentsLabel
 
-
+@onready var inventory_button: Button = $MarginContainer/VBoxContainer/InventoryButton
+@onready var shop_button: Button = $MarginContainer/VBoxContainer/ShopButton
+@onready var upgrade_player_stats_button: Button = $MarginContainer/VBoxContainer/UpgradePlayerStatsButton
 @onready var upgrade_equipment_button: Button = $MarginContainer/VBoxContainer/UpgradeEquipmentButton
 @onready var upgrade_summons_button: Button = $MarginContainer/VBoxContainer/UpgradeSummonsButton
+@onready var settings_button: Button = $MarginContainer/VBoxContainer/SettingsButton
+@onready var back_to_startup_button: Button = $MarginContainer/VBoxContainer/BackToStartupButton
 
 
 func _ready() -> void:
 	GameState.all_levels = levels
 	_build_level_buttons()
 	_update_gold_label(GameState.get_gold())
+	_update_fragments_label(GameState.get_fragments())
 	GameState.gold_changed.connect(_update_gold_label)
+	
+	inventory_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/inventory/inventory_screen.tscn"))
+	shop_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/shop/shop_screen.tscn"))
+	upgrade_player_stats_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/upgrade_player_stats_screen.tscn"))
 	upgrade_equipment_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/upgrade_equipment_screen.tscn"))
 	upgrade_summons_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/upgrade_summons_screen.tscn"))
-
+	settings_button.pressed.connect(_on_settings_pressed)	
+	back_to_startup_button.pressed.connect(_on_back_to_startup_pressed)
+	
 
 func _build_level_buttons() -> void:
 	for i in range(levels.size()):
@@ -103,3 +115,16 @@ func _on_level_selected(index: int) -> void:
 
 func _update_gold_label(current_gold: int) -> void:
 	gold_label.text = "Lische d'Oro: %d" % current_gold
+
+
+func _update_fragments_label(current_fragments: int) -> void:
+	fragments_label.text = "Frammenti: %d" % current_fragments
+
+
+func _on_settings_pressed() -> void:
+	GameState.settings_return_path = "res://scripts/ui/main_menu/main_menu.tscn"
+	get_tree().change_scene_to_file("res://scenes/settings_screen.tscn")
+
+
+func _on_back_to_startup_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/startup_screen.tscn")
