@@ -1,9 +1,8 @@
+SettingDefinitionResource
 PlayerStatDefinitionResource
-PlayerStatUpgradeCurveResource
 ItemRarityResource
 InventoryItemResource
 DifficultyModeResource
-SettingDefinitionResource
 EnemyResource
 ExplodingEnemyResource
 SummonUpgradeCurveResource

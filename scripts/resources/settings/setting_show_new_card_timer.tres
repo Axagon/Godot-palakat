@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettingDefinitionResource" format=3 uid="uid://c6cku763alldq"]
+
+[ext_resource type="Script" uid="uid://dks5dc8bvsush" path="res://scripts/resources/settings/settings_definition_resource.gd" id="1_p568m"]
+
+[resource]
+script = ExtResource("1_p568m")
+key = "show_next_card_timer"
+label = "Mostra timer prossima carta"
+default_value = 1.0
+metadata/_custom_type_script = "uid://dks5dc8bvsush"

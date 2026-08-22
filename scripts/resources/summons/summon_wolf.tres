@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="SummonResource" format=3 uid="uid://bq1tnoegnidmt"]
 
 [ext_resource type="Script" uid="uid://ch6bw48writhf" path="res://scripts/resources/summons/summon_resource.gd" id="1_70aja"]
+[ext_resource type="Texture2D" uid="uid://c2uukj6dtj68q" path="res://icon.svg" id="1_bjfkp"]
 
 [resource]
 script = ExtResource("1_70aja")
 summon_name = "Lupo"
+icon = ExtResource("1_bjfkp")
 element = 1
 food_cost = 18
 max_health = 22

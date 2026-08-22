@@ -153,9 +153,10 @@ offset_transform_position = Vector2(0, -75)
 mouse_filter = 2
 script = ExtResource("1_ahhtf")
 card_scene = ExtResource("2_oo0fn")
+card_hit_margin_px = 15.0
 metadata/_custom_type_script = "uid://bx58iljjdltck"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/SummonHandUI" unique_id=913122895]
+[node name="CardContainer" type="Control" parent="Control/SummonHandUI" unique_id=1768959522]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -166,6 +167,23 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_enabled = true
 mouse_filter = 2
+
+[node name="NextCardLabel" type="Label" parent="Control/SummonHandUI" unique_id=1632518623]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+label_settings = ExtResource("5_uo2fv")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="SpellButtons" type="VBoxContainer" parent="Control" unique_id=10266556]
 layout_mode = 1

@@ -6,6 +6,8 @@
 [ext_resource type="Resource" uid="uid://bosqbf6yqpt3r" path="res://scripts/resources/settings/setting_music_volume.tres" id="4_2k6ht"]
 [ext_resource type="Resource" uid="uid://4rpaujpnk3h8" path="res://scripts/resources/settings/setting_sfx_volume.tres" id="5_huheb"]
 [ext_resource type="Resource" uid="uid://bcm4cc62g8hya" path="res://scripts/resources/settings/setting_show_enemy_health.tres" id="6_netge"]
+[ext_resource type="Resource" uid="uid://dt6t84e41k20q" path="res://scripts/resources/settings/setting_hand_view_style.tres" id="7_t5s44"]
+[ext_resource type="Resource" uid="uid://c6cku763alldq" path="res://scripts/resources/settings/setting_show_new_card_timer.tres" id="8_hbblf"]
 
 [node name="SettingScreen" type="Control" unique_id=255312637]
 layout_mode = 3
@@ -16,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7q1qo")
 row_scene = ExtResource("2_t5s44")
-setting_definitions = Array[ExtResource("3_hbblf")]([ExtResource("4_2k6ht"), ExtResource("5_huheb"), ExtResource("6_netge")])
+setting_definitions = Array[ExtResource("3_hbblf")]([ExtResource("4_2k6ht"), ExtResource("5_huheb"), ExtResource("6_netge"), ExtResource("7_t5s44"), ExtResource("8_hbblf")])
 
 [node name="Background" type="Panel" parent="." unique_id=344115969]
 layout_mode = 1

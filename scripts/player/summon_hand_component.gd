@@ -68,3 +68,13 @@ func _draw_random_card() -> void:
 		return
 	hand[empty_slot] = deck[randi() % deck.size()]
 	hand_changed.emit(hand)
+
+
+func get_seconds_until_next_draw() -> float:
+	if not has_empty_slot():
+		return -1.0
+	return _draw_timer
+
+
+func has_empty_slot() -> bool:
+	return hand.find(null) != -1

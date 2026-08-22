@@ -1,13 +1,13 @@
+TextureRect
+Label
+VBoxContainer
+ColorRect
 Control
 HBoxContainer
 Button
-Label
 ConfirmationDialog
-VBoxContainer
 Panel
-ColorRect
 GridContainer
-TextureRect
 CheckButton
 MarginContainer
 HSlider
